@@ -1,0 +1,1751 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brief 3 Decision tree, random Forest –Aude &#8212; Cahier d&#39;apprentissage Aude</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="1. Importez les bibliothéques necessaires" href="regression_logistic.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/pandas.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Cahier d'apprentissage Aude</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Cahier d’apprentissage
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="notes_python.html">
+   Notes diverses code python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html">
+   1. Importez le package numpy sous le nom np
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#creer-un-vecteur-des-valeurs-0-de-taille-15">
+   2. Créer un vecteur des valeurs 0 de taille 15
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#creez-un-vecteur-nul-de-taille-10-mais-la-cinquieme-valeur-qui-est-1">
+   3. Créez un vecteur nul de taille 10 mais la cinquième valeur qui est 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#creez-un-vecteur-avec-des-valeurs-allant-de-10-a-49">
+   4. Créez un vecteur avec des valeurs allant de 10 à 49
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#inverser-un-vecteur">
+   5. Inverser un vecteur
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#creez-un-vecteur-aleatoire-de-taille-30-et-trouvez-la-valeur-moyenne">
+   6. Créez un vecteur aléatoire de taille 30 et trouvez la valeur moyenne
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#rechercher-des-indices-d-elements-non-nuls-a-partir-de-0-3-1-2-0-0-4-0">
+   7. Rechercher des indices d’éléments non nuls à partir de [0,3,1,2,0,0,4,0]
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#etant-donne-un-tableau-1d-negativez-tous-les-elements-qui-sont-entre-2-et-7">
+   8. Étant donné un tableau 1D, négativez tous les éléments qui sont entre 2 et 7.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#comment-extraire-tous-les-nombres-entre-un-intervalle-donne-d-un-tableau-numpy">
+   9. Comment extraire tous les nombres entre un intervalle donné d’un tableau numpy?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#comment-trouver-des-valeurs-communes-entre-deux-tableaux">
+   10. Comment trouver des valeurs communes entre deux tableaux?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#comment-concatener-deux-tableaux-verticalment-horizontalement">
+   11. Comment concaténer deux tableaux verticalment &amp; horizontalement
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#creer-une-matrice-aletoire-de-taille-6-4">
+   12. Créer une matrice alétoire de taille (6,4)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#faire-le-transpose-une-matrice">
+   13. Faire le transposé une matrice
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#creer-une-matrice-d-identite-de-taille-3x3">
+   14. Créer une matrice d’identité de taille 3x3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#creer-un-tableau-3x5x5-avec-des-valeurs-aleatoires">
+   15. Créer un tableau 3x5x5 avec des valeurs aléatoires
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#creez-un-tableau-10x10-avec-des-valeurs-aleatoires-et-trouvez-les-valeurs-minimum-et-maximum">
+   16. Créez un tableau 10x10 avec des valeurs aléatoires et trouvez les valeurs minimum et maximum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#creez-un-tableau-2d-avec-1-sur-les-extremites-et-0-a-l-interieur">
+   17. Créez un tableau 2D avec 1 sur les extrémités et 0 à l’intérieur
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#creer-une-matrice-5x5-avec-des-valeurs-1-2-3-4-juste-en-dessous-de-la-diagonale">
+   18. Créer une matrice 5x5 avec des valeurs 1,2,3,4 juste en dessous de la diagonale
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#normaliser-une-matrice-aleatoire-5x5">
+   19. Normaliser une matrice aléatoire 5x5
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#multiplier-une-matrice-5x3-par-une-matrice-3x2">
+   20. Multiplier une matrice 5x3 par une matrice 3x2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#comment-obtenir-les-positions-ou-on-a-les-meme-elements-dans-les-deux-tableaux">
+   21. Comment obtenir les positions où on a les même éléments dans les deux tableaux ?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#comment-trouver-l-index-de-la-n-ieme-repetition-d-un-element-dans-un-tableau-1d">
+   22. Comment trouver l’index de la n ième répétition d’un élément dans un tableau 1D
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#comment-soustraire-un-tableau-1d-d-un-tableau-2d-ou-chaque-element-du-tableau-1d-soustrait-de-la-ligne-respective">
+   23. Comment soustraire un tableau 1d d’un tableau 2d, où chaque élément du tableau 1d soustrait de la ligne respective?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#comment-supprimer-toutes-les-valeurs-manquantes-d-un-tableau-numpy-avec-for">
+   24. Comment supprimer toutes les valeurs manquantes d’un tableau numpy? (avec for)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_cv.html">
+   1. Installer la bibliothèque opencv
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_cv.html#importer-la-bibliotheque">
+   2. Importer la bibliothèque
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_cv.html#lire-une-image-et-afficher-son-type">
+   1. Lire une image et afficher son type
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_cv.html#afficher-cette-image-et-sa-taille">
+   2. Afficher cette image et sa taille
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_cv.html#rotation-de-l-image">
+   3. Rotation de l’image
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_cv.html#recadrer-une-image">
+   4. Recadrer une image
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_cv.html#redimensionner-une-image">
+   5. Redimensionner une image
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_cv.html#ajuster-le-contraste-de-l-image">
+   6. Ajuster le contraste de l’image
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_cv.html#rendre-une-image-floue">
+   7. Rendre une image floue
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_cv.html#detecter-les-contours">
+   8. Detecter les contours
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_cv.html#convertir-une-image-en-niveau-de-gris">
+   9. Convertir une image en niveau de gris
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_cv.html#les-canneaux-rouge-vert-bleu">
+   10. Les canneaux Rouge, Vert, Bleu
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_cv.html#detection-du-centre-de-gravite-de-l-image">
+   11. Détection du centre de gravité de l’image
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_cv.html#extraction-de-texte-a-partir-d-une-image-ocr">
+   12. Extraction de texte à partir d’une image (OCR)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_cv.html#reduire-le-bruit-pour-une-image-couleur-et-en-niveau-de-gris">
+   13. Réduire le bruit pour une image couleur et en niveau de gris
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_cv.html#detection-des-visages-avec-la-methode-de-viola-et-jones">
+   14. Detection des visages avec la méthode de Viola et Jones
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_logistic.html">
+   1. Importez les bibliothéques necessaires
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_logistic.html#importez-le-jeu-de-donnees-weatheraus-csv">
+   2. Importez le jeu de données ‘weatherAUS.csv’
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_logistic.html#exploration-des-donnees">
+   3. Exploration des données
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_logistic.html#manipulation-d-une-variable-de-type-date">
+   4. Manipulation d’une variable de type date
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_logistic.html#exploration-des-variables-quantitatives">
+   5. Exploration des variables quantitatives
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_logistic.html#notre-variable-target-y-est-le-raintomorrow-recuprer-x-et-y-a-partir-du-jeu-de-donnees">
+   6. Notre variable target (Y) est le RainTomorrow, Récuprer X et Y à partir du jeu de données
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_logistic.html#fractionnement-le-jeu-de-donnees-en-jeu-d-entrainement-et-jeu-de-test-20-pour-le-test">
+   7. Fractionnement le jeu de données en jeu d’entraînement et jeu de test (20% pour le test)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_logistic.html#checker-les-valeurs-manquantes-des-variables-quantitatives-du-jeu-d-entrainement-et-de-test">
+   8. Checker les valeurs manquantes des variables quantitatives du jeu d’entraînement et de test
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_logistic.html#en-utilisant-simpleimputer-de-scikit-learn-remplacer-les-valeurs-manquantes-dans-les-variables-numerique-entrainement-et-test-par-la-moyenne">
+   9. En utilisant SimpleImputer de Scikit-Learn remplacer les valeurs manquantes dans les variables numérique (entraînement et test) par la moyenne
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_logistic.html#verifier-que-les-valeurs-manquantes-n-existent-plus-dans-les-variables-quantitatives-entrainement-et-test">
+   10. Vérifier que les valeurs manquantes n’existent plus dans les variables quantitatives (entraînement et test)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_logistic.html#en-utilisant-la-fonction-fillna-et-mode-remplacer-les-valeurs-manquantes-dans-les-variables-qualitatives-par-la-valeur-la-plus-frequante-pour-chaque-variable">
+   11. En utilisant la fonction fillna() et mode() remplacer les valeurs manquantes dans les variables qualitatives par la valeur la plus fréquante pour chaque variable.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_logistic.html#verifier-que-les-valeurs-manquantes-n-existent-plus-dans-les-variables-qualitative-entrainement-et-test">
+   12. Vérifier que les valeurs manquantes n’existent plus dans les variables qualitative (entraînement et test)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_logistic.html#encoder-la-variable-qualitative-raintoday-en-utilisant-le-module-category-encoders-et-la-fonction-binaryencoder-cols-raintoday-pour-le-jeu-d-entrainement-et-de-test">
+   13. Encoder la variable qualitative ‘RainToday’ en utilisant le module category_encoders et la fonction BinaryEncoder(cols=[‘RainToday’]) pour le jeu d’entraînement et de test.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_logistic.html#recreer-un-nouveau-jeu-d-entrainement-en-concatenant-les-variables-numeriques-du-jeu-d-entrainement-precedent-avec-les-deux-colonnes-raintoday-0-raintoday-1-qui-vont-se-creer-a-l-aide-de-l-etape-precedente-plus-les-variables-qualitatives-transformees-a-des-variables-muettes-avec-la-fonction-get-dummies-de-pandas">
+   14. Recréer un nouveau jeu d’entrainement en concatenant les variables numériques du jeu d’entrainement précedent avec les deux colonnes RainToday_0’, ‘RainToday_1’qui vont se créer à l’aide de l’étape précedente, plus les variables qualitatives transformées à des variables muettes avec la fonction get_dummies() de pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_logistic.html#refaire-l-etape-precedente-pour-le-jeu-de-test">
+   15. Refaire l’étape précedente pour le jeu de test
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_logistic.html#standariser-votre-jeu-d-entrainement-et-de-test-a-l-aide-de-standardscaler">
+   16. Standariser votre jeu d’entrainement et de test à l’aide de StandardScaler
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_logistic.html#creer-votre-modele-de-regression-logistique-et-entrainez-le-sur-les-donnees-d-entrainement">
+   17. Créer votre modèle de régression logistique et entraînez le sur les données d’entraînement
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_logistic.html#predire-les-resultats-du-modele-sur-l-ensemble-du-test">
+   18. Predire les résultats du modèle sur l’ensemble du test
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_logistic.html#afficher-la-matrice-de-confusion-tp-tn-fp-fn-sur-le-jeu-du-test-en-utilisant-la-fonction-confusion-matrix">
+   19. Afficher la matrice de confusion, TP, TN, FP, FN sur le jeu du test en utilisant la fonction confusion_matrix
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_logistic.html#calculer-les-metriques-de-classification-accuracy-classification-error-precision-recall-specificity-en-utilisant-seulement-les-valeurs-de-tp-tn-fp-fn">
+   20. Calculer les métriques de classification (accuracy, classification error, precision, recall, specificity) en utilisant seulement les valeurs de TP, TN, FP, FN.
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Brief 3 Decision tree, random Forest  –Aude
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/brief3_Aude.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/brief3_Aude.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#information-sur-les-donnees">
+   1.2  Information sur les données
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creez-un-code-qui-lit-le-fichier-housing-csv-et-affiche-ses-premieres-lignes-pour-ce-faire-utilisez-les-fonctions-read-csv-et-head-de-la-bibliotheque-pandas-sachant-que-la-valeurcible-est-median-house-value-traitons-nous-un-probleme-de-classification-ou-de-regres-sion">
+     1.  Créez un code qui lit le fichier “housing.csv” et affiche ses premières lignes.  Pour ce faire,utilisez les fonctions”read_csv”et “head” de la bibliothèque pandas.  Sachant que la valeurcible est”median_house_value”, traitons-nous un problème de classification ou de régres-sion ?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creez-un-code-qui-affiche-le-nombre-de-lignes-et-de-colonnes-des-donnees-le-type-des-at-tributs-et-le-nombre-de-valeurs-non-nulles-quelle-remarque-sur-lattribut-total-bedrooms-par-rapport-aux-autres-attributs">
+     2. Créez un code qui affiche le nombre de lignes et de colonnes des données, le type des at-tributs et le nombre de valeurs non nulles. Quelle remarque sur l’attribut”total_bedrooms”par rapport aux autres attributs ?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-travers-la-question-precedente-vous-avez-du-remarquez-que-le-type-dans-valeurs-utiliseesdans-lattribut-ocean-proximity-est-un-objet-forcement-un-texte-vu-quon-manipule-unfichier-csv-il-est-interessant-de-connaitre-ses-valeurs-pour-cette-finalite-creez-un-code-quiaffiche-loccurrence-des-valeurs-utilisees-dans-cet-attribut">
+     3.  A travers la question précédente, vous avez du remarquez que le type dans valeurs utiliséesdans l’attribut”ocean_proximity”est un objet (forcément un texte vu qu’on manipule unfichier CSV). Il est intéressant de connaître ses valeurs. Pour cette finalité, créez un code quiaffiche l’occurrence des valeurs utilisées dans cet attribut.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creez-un-code-qui-affiche-des-statistiques-sur-les-attributs-de-ton-jeu-de-donnees">
+     4.  Créez un code qui affiche des statistiques sur les attributs de ton jeu de données.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creez-un-code-qui-affiche-les-histogrammes-des-differents-attributs-le-nombre-de-bins-asaisir-est-50-et-la-taille-de-chaque-histogramme-figsize-20-15">
+     5.  Créez un code qui affiche les histogrammes des différents attributs.  Le nombre de “bins” àsaisir est 50 et la taille de chaque histogramme “figsize=(20,15)”.
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#repartition-des-donnees">
+   1.3  Répartition des données
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creez-un-code-qui-partitionne-les-donnees-en-base-dapprentissage-et-base-de-test-optezpour-80-pour-lapprentissage-et-20-pour-le-test">
+     1.  Créez un code qui partitionne les données en base d’apprentissage et base de test.  Optezpour 80% pour l’apprentissage et 20% pour le test.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#affichez-len-tete-de-la-base-de-test">
+     2.  Affichez l’en-tête de la base de test
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#decouverte-et-visualisation-des-donnees">
+   1.4  Découverte et visualisation des données
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creez-un-code-qui-affiche-en-abscisse-la-longitude-et-en-ordonnee-la-latitude-optez-pour-letype-scatter-dans-la-fonction-plot-pour-laffichage-et-une-valeur-dalpha-cest-un-parametrequi-joue-sur-la-transparence-de-la-courbe-de-0-1-pour-un-affichage-plus-clair">
+     1.  Créez un code qui affiche en abscisse la longitude et en ordonnée la latitude. Optez pour letype scatter dans la fonction plot pour l’affichage et une valeur d’alpha (c’est un paramètrequi joue sur la transparence de la courbe) de 0.1 pour un affichage plus clair.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creez-un-code-qui-permet-davoir-une-idee-sur-le-lien-entre-la-position-geographique-et-leprix-des-maisons-target-optez-pour-une-valeur-egale-a-false-de-sharex">
+     2.  Créez un code qui permet d’avoir une idée sur le lien entre la position géographique et leprix des maisons (target). Optez pour une valeur égale à False de “sharex”.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modifiez-le-graphe-de-la-question-precedente-pour-savoir-la-raison-du-prix-eleve-de-quelquesmaisons">
+     3.  Modifiez le graphe de la question précédente pour savoir la raison du prix élevé de quelquesmaisons.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#une-pratique-tres-interessante-dans-lanalyse-de-donnees-est-letude-des-correlation-en-tre-les-variables">
+     4. Une  pratique  très  intéressante  dans  l’analyse  de  données  est  l’étude  des  corrélation  en-tre  les  variables.
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nettoyage-des-donnees">
+   1.5  Nettoyage des données
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creez-un-code-permettant-de-creer-deux-variables">
+     1.  Créez un code permettant de créer deux variables :
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dans-la-question-8-vous-avez-du-remarquer-que-lattribut-total-bedrooms-a-des-valeursmanquantes-nan">
+     2.  Dans la question 8, vous avez dû remarquer que l’attribut”total_bedrooms”a des valeursmanquantes (NaN).
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#tout-a-deja-ete-realise-precedemment">
+       Tout a déjà été réalisé précédemment
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#selection-apprentissage-et-evaluation-du-modele">
+   2  Sélection, apprentissage et évaluation du modèle
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creez-un-code-permettant-dappliquer-la-regression-lineaire-sur-les-donnees-dapprentissage">
+     1.  Créez un code permettant d’appliquer la régression linéaire sur les données d’apprentissage.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creez-un-code-qui-predit-les-classes-de-la-base-dapprentissage-pour-ce-faire-utilisez-lamethode-predict-de-la-classe-linearregression-en-donnant-comme-argument-les-donneesdapprentissage-ensuite-affichez-les-valeurs-cible-reelles-et-celles-predites">
+     2.  Créez un code qui prédit les classes de la base d’apprentissage.   Pour ce faire,  utilisez laméthode predict de la classe LinearRegression en donnant comme argument les donnéesd’apprentissage. Ensuite, affichez les valeurs cible réelles et celles prédites.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calculez-la-mesure-rmse-du-modele-de-la-regression-lineaire">
+     3.  Calculez la mesure RMSE du modèle de la régression linéaire.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#refaites-les-deux-etapes-precedentes-avec-le-modele-decisiontreeregressor-calculez-lamesure-rmse-du-modele-decisiontreeregressor-qui-existe-dans-le-sous-module-tree-dumodule-sklearn">
+     4.  Refaites  les  deux  étapes  précédentes  avec  le  modèle  DecisionTreeRegressor.   Calculez  lamesure  RMSE  du  modèle  DecisionTreeRegressor  qui  existe  dans  le  sous-module  tree  dumodule sklearn.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#meme-si-la-valeur-de-rmse-de-decisiontreeregressor-est-egale-a-0-on-ne-peut-pas-conclureque-ce-modele-fonctionne-parfaitement-sur-la-base-dapprentissage">
+     5.  Même si la valeur de RMSE de DecisionTreeRegressor est égale à 0, on ne peut pas conclureque ce modèle fonctionne parfaitement sur la base d’apprentissage.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#suivre-les-etapes-de-la-question-precedente-sur-le-modele-de-la-regression-lineaire-ensuite-comparez-les-resultats-avec-ceux-du-decisiontreeregressor-quel-modele-presente-un-prob-leme-dapprentissage-pourquoi">
+     6.  Suivre les étapes de la question précédente sur le modèle de la régression linéaire.  Ensuite,comparez les résultats avec ceux du DecisionTreeRegressor. Quel modèle présente un prob-lème d’apprentissage ? pourquoi ?
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#le-modele-de-regression-lineaire-est-legerement-meilleur-que-le-decision-tree-erreur-moyenne-tree-91000-erreur-moyenne-lineaire-72000">
+       Le modèle de regression linéaire est légèrement meilleur que le decision tree (erreur moyenne tree: 91000, erreur moyenne lineaire: 72000)
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fine-tunning">
+   3  Fine-Tunning
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#grid-search">
+     3.1  Grid Search
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ecrire-un-code-qui">
+       1.  Écrire un code qui :
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cree-la-variable-suivante-param-grid-n-estimators-3-10-30-max-f-eatures-2-4-6-8-cette-variable-contient-un-dictionnaire-avec-quelques-valeurs-de-deux-parametres-de-lamethode-randomforestregressor-au-total-4x3-12-combinaisons-vont-etre-testees">
+       Crée la variable suivante :param_grid= [′n_estimators′:[3, 10, 30],′max_f eatures′:[2, 4, 6, 8]]Cette variable contient un dictionnaire avec quelques valeurs de deux paramètres de laméthode RandomForestRegressor. Au total, 4x3=12 combinaisons vont être testées.
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#applique-une-recherche-de-type-gridsearch-du-couple-qui-donne-le-meilleur-resultat-pour-ce-faire-utilisez-la-fonction-gridsearchcv-du-sous-module-model-selection-dumodule-sklearn-optez-pour-une-valeur-de-5-pour-cv-une-validation-croisee-de-type5-fold-cross-validation">
+       Applique une recherche, de type GridSearch, du couple qui donne le meilleur résultat.Pour ce faire, utilisez la fonction GridSearchCV du sous-module model_selection dumodule sklearn. Optez pour une valeur de 5 pour “cv” (une validation croisée de type5-fold cross-validation)
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#affichez-les-meilleurs-parametres-de-la-methode-randomforestregressor-en-utilisant-lafonction-best-params">
+       2.  Affichez  les  meilleurs  paramètres  de  la  méthode  RandomForestRegressor  en  utilisant  lafonction best_params_
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#affichez-les-resultats-des-12-combinaisons-avec-la-fonction-grid-search">
+       3.  Affichez les résultats des 12 combinaisons avec la fonction grid-search
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#evaluation-sur-la-base-de-test">
+     3.2  Evaluation sur la base de test
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#les-donnees-avaient-ete-preparees-avant-le-split">
+       les donnees avaient été préparées avant le split
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="brief-3-decision-tree-random-forest-aude">
+<h1>Brief 3 Decision tree, random Forest  –Aude<a class="headerlink" href="#brief-3-decision-tree-random-forest-aude" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;housing.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(20640, 10)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="information-sur-les-donnees">
+<h2>1.2  Information sur les données<a class="headerlink" href="#information-sur-les-donnees" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="creez-un-code-qui-lit-le-fichier-housing-csv-et-affiche-ses-premieres-lignes-pour-ce-faire-utilisez-les-fonctions-read-csv-et-head-de-la-bibliotheque-pandas-sachant-que-la-valeurcible-est-median-house-value-traitons-nous-un-probleme-de-classification-ou-de-regres-sion">
+<h3>1.  Créez un code qui lit le fichier “housing.csv” et affiche ses premières lignes.  Pour ce faire,utilisez les fonctions”read_csv”et “head” de la bibliothèque pandas.  Sachant que la valeurcible est”median_house_value”, traitons-nous un problème de classification ou de régres-sion ?<a class="headerlink" href="#creez-un-code-qui-lit-le-fichier-housing-csv-et-affiche-ses-premieres-lignes-pour-ce-faire-utilisez-les-fonctions-read-csv-et-head-de-la-bibliotheque-pandas-sachant-que-la-valeurcible-est-median-house-value-traitons-nous-un-probleme-de-classification-ou-de-regres-sion" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>longitude</th>
+      <th>latitude</th>
+      <th>housing_median_age</th>
+      <th>total_rooms</th>
+      <th>total_bedrooms</th>
+      <th>population</th>
+      <th>households</th>
+      <th>median_income</th>
+      <th>median_house_value</th>
+      <th>ocean_proximity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>-122.23</td>
+      <td>37.88</td>
+      <td>41.0</td>
+      <td>880.0</td>
+      <td>129.0</td>
+      <td>322.0</td>
+      <td>126.0</td>
+      <td>8.3252</td>
+      <td>452600.0</td>
+      <td>NEAR BAY</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-122.22</td>
+      <td>37.86</td>
+      <td>21.0</td>
+      <td>7099.0</td>
+      <td>1106.0</td>
+      <td>2401.0</td>
+      <td>1138.0</td>
+      <td>8.3014</td>
+      <td>358500.0</td>
+      <td>NEAR BAY</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-122.24</td>
+      <td>37.85</td>
+      <td>52.0</td>
+      <td>1467.0</td>
+      <td>190.0</td>
+      <td>496.0</td>
+      <td>177.0</td>
+      <td>7.2574</td>
+      <td>352100.0</td>
+      <td>NEAR BAY</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>-122.25</td>
+      <td>37.85</td>
+      <td>52.0</td>
+      <td>1274.0</td>
+      <td>235.0</td>
+      <td>558.0</td>
+      <td>219.0</td>
+      <td>5.6431</td>
+      <td>341300.0</td>
+      <td>NEAR BAY</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>-122.25</td>
+      <td>37.85</td>
+      <td>52.0</td>
+      <td>1627.0</td>
+      <td>280.0</td>
+      <td>565.0</td>
+      <td>259.0</td>
+      <td>3.8462</td>
+      <td>342200.0</td>
+      <td>NEAR BAY</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Il s’agit d’un problème de regression</p>
+</div>
+<div class="section" id="creez-un-code-qui-affiche-le-nombre-de-lignes-et-de-colonnes-des-donnees-le-type-des-at-tributs-et-le-nombre-de-valeurs-non-nulles-quelle-remarque-sur-lattribut-total-bedrooms-par-rapport-aux-autres-attributs">
+<h3>2. Créez un code qui affiche le nombre de lignes et de colonnes des données, le type des at-tributs et le nombre de valeurs non nulles. Quelle remarque sur l’attribut”total_bedrooms”par rapport aux autres attributs ?<a class="headerlink" href="#creez-un-code-qui-affiche-le-nombre-de-lignes-et-de-colonnes-des-donnees-le-type-des-at-tributs-et-le-nombre-de-valeurs-non-nulles-quelle-remarque-sur-lattribut-total-bedrooms-par-rapport-aux-autres-attributs" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;lignes: &quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="s2">&quot;colonnes: &quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>lignes:  20640 colonnes:  10
+&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 20640 entries, 0 to 20639
+Data columns (total 10 columns):
+ #   Column              Non-Null Count  Dtype  
+---  ------              --------------  -----  
+ 0   longitude           20640 non-null  float64
+ 1   latitude            20640 non-null  float64
+ 2   housing_median_age  20640 non-null  float64
+ 3   total_rooms         20640 non-null  float64
+ 4   total_bedrooms      20433 non-null  float64
+ 5   population          20640 non-null  float64
+ 6   households          20640 non-null  float64
+ 7   median_income       20640 non-null  float64
+ 8   median_house_value  20640 non-null  float64
+ 9   ocean_proximity     20640 non-null  object 
+dtypes: float64(9), object(1)
+memory usage: 1.6+ MB
+None
+</pre></div>
+</div>
+</div>
+</div>
+<p>L’attribut “total_bedrooms” contient des valeurs nulles</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># remplacer les variables nulles par la moyenne</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.impute</span> <span class="kn">import</span> <span class="n">SimpleImputer</span>
+
+<span class="n">imptr_train</span><span class="o">=</span><span class="n">SimpleImputer</span><span class="p">(</span><span class="n">missing_values</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">strategy</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">((</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">4</span><span class="p">:</span><span class="mi">5</span><span class="p">])</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">4</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="n">imptr_train</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">4</span><span class="p">:</span><span class="mi">5</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(20640, 1)
+&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 20640 entries, 0 to 20639
+Data columns (total 10 columns):
+ #   Column              Non-Null Count  Dtype  
+---  ------              --------------  -----  
+ 0   longitude           20640 non-null  float64
+ 1   latitude            20640 non-null  float64
+ 2   housing_median_age  20640 non-null  float64
+ 3   total_rooms         20640 non-null  float64
+ 4   total_bedrooms      20640 non-null  float64
+ 5   population          20640 non-null  float64
+ 6   households          20640 non-null  float64
+ 7   median_income       20640 non-null  float64
+ 8   median_house_value  20640 non-null  float64
+ 9   ocean_proximity     20640 non-null  object 
+dtypes: float64(9), object(1)
+memory usage: 1.6+ MB
+None
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="a-travers-la-question-precedente-vous-avez-du-remarquez-que-le-type-dans-valeurs-utiliseesdans-lattribut-ocean-proximity-est-un-objet-forcement-un-texte-vu-quon-manipule-unfichier-csv-il-est-interessant-de-connaitre-ses-valeurs-pour-cette-finalite-creez-un-code-quiaffiche-loccurrence-des-valeurs-utilisees-dans-cet-attribut">
+<h3>3.  A travers la question précédente, vous avez du remarquez que le type dans valeurs utiliséesdans l’attribut”ocean_proximity”est un objet (forcément un texte vu qu’on manipule unfichier CSV). Il est intéressant de connaître ses valeurs. Pour cette finalité, créez un code quiaffiche l’occurrence des valeurs utilisées dans cet attribut.<a class="headerlink" href="#a-travers-la-question-precedente-vous-avez-du-remarquez-que-le-type-dans-valeurs-utiliseesdans-lattribut-ocean-proximity-est-un-objet-forcement-un-texte-vu-quon-manipule-unfichier-csv-il-est-interessant-de-connaitre-ses-valeurs-pour-cette-finalite-creez-un-code-quiaffiche-loccurrence-des-valeurs-utilisees-dans-cet-attribut" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">ocean_proximity</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;1H OCEAN     9136
+INLAND        6551
+NEAR OCEAN    2658
+NEAR BAY      2290
+ISLAND           5
+Name: ocean_proximity, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#utilisation de get_dummies pour la colonne ocean_proximity</span>
+<span class="n">ocean</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">ocean_proximity</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;ocean_proximity&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">df</span><span class="p">,</span> <span class="n">ocean</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       &lt;1H OCEAN  INLAND  ISLAND  NEAR BAY  NEAR OCEAN
+0              0       0       0         1           0
+1              0       0       0         1           0
+2              0       0       0         1           0
+3              0       0       0         1           0
+4              0       0       0         1           0
+...          ...     ...     ...       ...         ...
+20635          0       1       0         0           0
+20636          0       1       0         0           0
+20637          0       1       0         0           0
+20638          0       1       0         0           0
+20639          0       1       0         0           0
+
+[20640 rows x 5 columns]
+   longitude  latitude  housing_median_age  total_rooms  total_bedrooms  \
+0    -122.23     37.88                41.0        880.0           129.0   
+1    -122.22     37.86                21.0       7099.0          1106.0   
+2    -122.24     37.85                52.0       1467.0           190.0   
+3    -122.25     37.85                52.0       1274.0           235.0   
+4    -122.25     37.85                52.0       1627.0           280.0   
+
+   population  households  median_income  median_house_value  &lt;1H OCEAN  \
+0       322.0       126.0         8.3252            452600.0          0   
+1      2401.0      1138.0         8.3014            358500.0          0   
+2       496.0       177.0         7.2574            352100.0          0   
+3       558.0       219.0         5.6431            341300.0          0   
+4       565.0       259.0         3.8462            342200.0          0   
+
+   INLAND  ISLAND  NEAR BAY  NEAR OCEAN  
+0       0       0         1           0  
+1       0       0         1           0  
+2       0       0         1           0  
+3       0       0         1           0  
+4       0       0         1           0  
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#definition de X et Y</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;median_house_value&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">Y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;median_house_value&#39;</span><span class="p">]</span>
+<span class="n">Y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="n">Y</span><span class="p">))</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">Y</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">Y</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Y</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(20640, 13)
+(20640, 1)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="creez-un-code-qui-affiche-des-statistiques-sur-les-attributs-de-ton-jeu-de-donnees">
+<h3>4.  Créez un code qui affiche des statistiques sur les attributs de ton jeu de données.<a class="headerlink" href="#creez-un-code-qui-affiche-des-statistiques-sur-les-attributs-de-ton-jeu-de-donnees" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()),</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       longitude  latitude  housing_median_age  total_rooms  total_bedrooms  \
+count    20640.0   20640.0             20640.0      20640.0         20640.0   
+mean      -120.0      36.0                29.0       2636.0           538.0   
+std          2.0       2.0                13.0       2182.0           419.0   
+min       -124.0      33.0                 1.0          2.0             1.0   
+25%       -122.0      34.0                18.0       1448.0           297.0   
+50%       -118.0      34.0                29.0       2127.0           438.0   
+75%       -118.0      38.0                37.0       3148.0           643.0   
+max       -114.0      42.0                52.0      39320.0          6445.0   
+
+       population  households  median_income  median_house_value  &lt;1H OCEAN  \
+count     20640.0     20640.0        20640.0             20640.0    20640.0   
+mean       1425.0       500.0            4.0            206856.0        0.0   
+std        1132.0       382.0            2.0            115396.0        0.0   
+min           3.0         1.0            0.0             14999.0        0.0   
+25%         787.0       280.0            3.0            119600.0        0.0   
+50%        1166.0       409.0            4.0            179700.0        0.0   
+75%        1725.0       605.0            5.0            264725.0        1.0   
+max       35682.0      6082.0           15.0            500001.0        1.0   
+
+        INLAND   ISLAND  NEAR BAY  NEAR OCEAN  
+count  20640.0  20640.0   20640.0     20640.0  
+mean       0.0      0.0       0.0         0.0  
+std        0.0      0.0       0.0         0.0  
+min        0.0      0.0       0.0         0.0  
+25%        0.0      0.0       0.0         0.0  
+50%        0.0      0.0       0.0         0.0  
+75%        1.0      0.0       0.0         0.0  
+max        1.0      1.0       1.0         1.0   2
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="creez-un-code-qui-affiche-les-histogrammes-des-differents-attributs-le-nombre-de-bins-asaisir-est-50-et-la-taille-de-chaque-histogramme-figsize-20-15">
+<h3>5.  Créez un code qui affiche les histogrammes des différents attributs.  Le nombre de “bins” àsaisir est 50 et la taille de chaque histogramme “figsize=(20,15)”.<a class="headerlink" href="#creez-un-code-qui-affiche-les-histogrammes-des-differents-attributs-le-nombre-de-bins-asaisir-est-50-et-la-taille-de-chaque-histogramme-figsize-20-15" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">15</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="c1">#plt.figure(figsize=(20,15))</span>
+<span class="c1">#plt.hist(X, bins=50)</span>
+
+<span class="c1">#plt.show()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/brief3_Aude_19_0.png" src="_images/brief3_Aude_19_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="repartition-des-donnees">
+<h2>1.3  Répartition des données<a class="headerlink" href="#repartition-des-donnees" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="creez-un-code-qui-partitionne-les-donnees-en-base-dapprentissage-et-base-de-test-optezpour-80-pour-lapprentissage-et-20-pour-le-test">
+<h3>1.  Créez un code qui partitionne les données en base d’apprentissage et base de test.  Optezpour 80% pour l’apprentissage et 20% pour le test.<a class="headerlink" href="#creez-un-code-qui-partitionne-les-donnees-en-base-dapprentissage-et-base-de-test-optezpour-80-pour-lapprentissage-et-20-pour-le-test" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">X_test</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">y_test</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>((16512, 13), (4128, 13), (4128, 1))
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="affichez-len-tete-de-la-base-de-test">
+<h3>2.  Affichez l’en-tête de la base de test<a class="headerlink" href="#affichez-len-tete-de-la-base-de-test" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">X_test</span><span class="p">[:</span><span class="mi">5</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       longitude  latitude  housing_median_age  total_rooms  total_bedrooms  \
+14740    -117.05     32.58                22.0       2101.0           399.0   
+10101    -117.97     33.92                32.0       2620.0           398.0   
+20566    -121.84     38.65                29.0       3167.0           548.0   
+2670     -115.60     33.20                37.0        709.0           187.0   
+15709    -122.43     37.79                25.0       1637.0           394.0   
+
+       population  households  median_income  &lt;1H OCEAN  INLAND  ISLAND  \
+14740      1551.0       371.0         4.1518          0       0       0   
+10101      1296.0       429.0         5.7796          1       0       0   
+20566      1554.0       534.0         4.3487          0       1       0   
+2670        390.0       142.0         2.4511          0       1       0   
+15709       649.0       379.0         5.0049          0       0       0   
+
+       NEAR BAY  NEAR OCEAN  
+14740         0           1  
+10101         0           0  
+20566         0           0  
+2670          0           0  
+15709         1           0  
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="decouverte-et-visualisation-des-donnees">
+<h2>1.4  Découverte et visualisation des données<a class="headerlink" href="#decouverte-et-visualisation-des-donnees" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="creez-un-code-qui-affiche-en-abscisse-la-longitude-et-en-ordonnee-la-latitude-optez-pour-letype-scatter-dans-la-fonction-plot-pour-laffichage-et-une-valeur-dalpha-cest-un-parametrequi-joue-sur-la-transparence-de-la-courbe-de-0-1-pour-un-affichage-plus-clair">
+<h3>1.  Créez un code qui affiche en abscisse la longitude et en ordonnée la latitude. Optez pour letype scatter dans la fonction plot pour l’affichage et une valeur d’alpha (c’est un paramètrequi joue sur la transparence de la courbe) de 0.1 pour un affichage plus clair.<a class="headerlink" href="#creez-un-code-qui-affiche-en-abscisse-la-longitude-et-en-ordonnee-la-latitude-optez-pour-letype-scatter-dans-la-fonction-plot-pour-laffichage-et-une-valeur-dalpha-cest-un-parametrequi-joue-sur-la-transparence-de-la-courbe-de-0-1-pour-un-affichage-plus-clair" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span><span class="p">[</span><span class="s1">&#39;longitude&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12069   -117.55
+15925   -122.44
+11162   -118.00
+4904    -118.26
+4683    -118.36
+          ...  
+13123   -121.26
+19648   -120.89
+9845    -121.90
+10799   -117.93
+2732    -115.56
+Name: longitude, Length: 16512, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X_train</span><span class="p">[</span><span class="s1">&#39;longitude&#39;</span><span class="p">],</span><span class="n">X_train</span><span class="p">[</span><span class="s1">&#39;latitude&#39;</span><span class="p">],</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;latitude and longitude &#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;longitude&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;latitude&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/brief3_Aude_28_0.png" src="_images/brief3_Aude_28_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="creez-un-code-qui-permet-davoir-une-idee-sur-le-lien-entre-la-position-geographique-et-leprix-des-maisons-target-optez-pour-une-valeur-egale-a-false-de-sharex">
+<h3>2.  Créez un code qui permet d’avoir une idée sur le lien entre la position géographique et leprix des maisons (target). Optez pour une valeur égale à False de “sharex”.<a class="headerlink" href="#creez-un-code-qui-permet-davoir-une-idee-sur-le-lien-entre-la-position-geographique-et-leprix-des-maisons-target-optez-pour-une-valeur-egale-a-false-de-sharex" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">sharex</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X_train</span><span class="p">[</span><span class="s1">&#39;longitude&#39;</span><span class="p">],</span><span class="n">X_train</span><span class="p">[</span><span class="s1">&#39;latitude&#39;</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">&#39;jet&#39;</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;latitude and longitude &#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;longitude&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;latitude&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/brief3_Aude_30_0.png" src="_images/brief3_Aude_30_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="modifiez-le-graphe-de-la-question-precedente-pour-savoir-la-raison-du-prix-eleve-de-quelquesmaisons">
+<h3>3.  Modifiez le graphe de la question précédente pour savoir la raison du prix élevé de quelquesmaisons.<a class="headerlink" href="#modifiez-le-graphe-de-la-question-precedente-pour-savoir-la-raison-du-prix-eleve-de-quelquesmaisons" title="Permalink to this headline">¶</a></h3>
+<p>Pour ce faire :</p>
+<p>•  Téléchargez l’image de la californie</p>
+<p>•  Utilisez la fonction imread du sous-module image du module matplotlib</p>
+<p>•  Utilisez la fonction imshow du sous-module pyplot du module matplotlib</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cali</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;california.png&#39;</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">sharex</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cali</span><span class="p">,</span> <span class="n">extent</span> <span class="o">=</span> <span class="p">[</span><span class="n">X_train</span><span class="p">[</span><span class="s1">&#39;longitude&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">X_train</span><span class="p">[</span><span class="s1">&#39;longitude&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="n">X_train</span><span class="p">[</span><span class="s1">&#39;latitude&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">X_train</span><span class="p">[</span><span class="s1">&#39;latitude&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()])</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X_train</span><span class="p">[</span><span class="s1">&#39;longitude&#39;</span><span class="p">],</span><span class="n">X_train</span><span class="p">[</span><span class="s1">&#39;latitude&#39;</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">&#39;jet&#39;</span><span class="p">),</span> <span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;latitude and longitude &#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;longitude&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;latitude&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/brief3_Aude_32_0.png" src="_images/brief3_Aude_32_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="une-pratique-tres-interessante-dans-lanalyse-de-donnees-est-letude-des-correlation-en-tre-les-variables">
+<h3>4. Une  pratique  très  intéressante  dans  l’analyse  de  données  est  l’étude  des  corrélation  en-tre  les  variables.<a class="headerlink" href="#une-pratique-tres-interessante-dans-lanalyse-de-donnees-est-letude-des-correlation-en-tre-les-variables" title="Permalink to this headline">¶</a></h3>
+<p>Créez  un  code  qui  affiche,  en  valeur,  la  corrélation  de  l’attribut”me-dian_house_value”avec les autres attributs.</p>
+<p>Qu’est ce que vous remarquez ?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">corr_matrix</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+<span class="n">corr_matrix</span><span class="p">[</span><span class="s1">&#39;median_house_value&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>median_house_value    1.000000
+median_income         0.688075
+&lt;1H OCEAN             0.256617
+NEAR BAY              0.160284
+NEAR OCEAN            0.141862
+total_rooms           0.134153
+housing_median_age    0.105623
+households            0.065843
+total_bedrooms        0.049454
+ISLAND                0.023416
+population           -0.024650
+longitude            -0.045967
+latitude             -0.144160
+INLAND               -0.484859
+Name: median_house_value, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>On remarque que la valeur de la maison est liée positivement au revenu moyen et négativement à l’éloignement par rapport à la mer.</p>
+</div>
+</div>
+<div class="section" id="nettoyage-des-donnees">
+<h2>1.5  Nettoyage des données<a class="headerlink" href="#nettoyage-des-donnees" title="Permalink to this headline">¶</a></h2>
+<p>Avant d’intégrer les données dans un algorithme d’apprentissage automatique, il est indispens-able de séparer le “features” et la valeur cible (target).</p>
+<div class="section" id="creez-un-code-permettant-de-creer-deux-variables">
+<h3>1.  Créez un code permettant de créer deux variables :<a class="headerlink" href="#creez-un-code-permettant-de-creer-deux-variables" title="Permalink to this headline">¶</a></h3>
+<p>•  Une première contenant que les input. Utilisez la fonction drop du module pandas</p>
+<p>•  Une deuxième contenant que les labels. Utilisez la fonction copy du module pandas</p>
+</div>
+<div class="section" id="dans-la-question-8-vous-avez-du-remarquer-que-lattribut-total-bedrooms-a-des-valeursmanquantes-nan">
+<h3>2.  Dans la question 8, vous avez dû remarquer que l’attribut”total_bedrooms”a des valeursmanquantes (NaN).<a class="headerlink" href="#dans-la-question-8-vous-avez-du-remarquer-que-lattribut-total-bedrooms-a-des-valeursmanquantes-nan" title="Permalink to this headline">¶</a></h3>
+<p>Pour remédier à ceci, il existes trois options :</p>
+<p>•  Supprimer les valeurs manquantes (NaN)</p>
+<p>•  Supprimer l’attribut”total_bedrooms”</p>
+<p>•  Remplacer les valeurs manquantes par une autre valeur (0, la moyenne, la médiane,… ).
+Nous optons pour cette méthode.  Ecrivez un code qui remplace les valeurs man-quantes par la médiane. Utilisez les fonctions median et fillna du module Pandas.</p>
+<p>Véri-fiez avec la fonction “info” si le problème a été résolu.3.  Les algorithmes d’apprentissage profond préfère de travailler avec les données numériques.Ceci est valable pour tous les attributs sauf”ocean_proximity”. Vérifiez ceci en affichant 10de ces valeurs. Transformer les valeurs qualitatives en des valeurs numériques.4.  Affichez les données pour vérifier le résultat</p>
+<div class="section" id="tout-a-deja-ete-realise-precedemment">
+<h4>Tout a déjà été réalisé précédemment<a class="headerlink" href="#tout-a-deja-ete-realise-precedemment" title="Permalink to this headline">¶</a></h4>
+</div>
+</div>
+</div>
+<div class="section" id="selection-apprentissage-et-evaluation-du-modele">
+<h2>2  Sélection, apprentissage et évaluation du modèle<a class="headerlink" href="#selection-apprentissage-et-evaluation-du-modele" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="creez-un-code-permettant-dappliquer-la-regression-lineaire-sur-les-donnees-dapprentissage">
+<h3>1.  Créez un code permettant d’appliquer la régression linéaire sur les données d’apprentissage.<a class="headerlink" href="#creez-un-code-permettant-dappliquer-la-regression-lineaire-sur-les-donnees-dapprentissage" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
+
+<span class="n">reg</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6381617983930401
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="creez-un-code-qui-predit-les-classes-de-la-base-dapprentissage-pour-ce-faire-utilisez-lamethode-predict-de-la-classe-linearregression-en-donnant-comme-argument-les-donneesdapprentissage-ensuite-affichez-les-valeurs-cible-reelles-et-celles-predites">
+<h3>2.  Créez un code qui prédit les classes de la base d’apprentissage.   Pour ce faire,  utilisez laméthode predict de la classe LinearRegression en donnant comme argument les donnéesd’apprentissage. Ensuite, affichez les valeurs cible réelles et celles prédites.<a class="headerlink" href="#creez-un-code-qui-predit-les-classes-de-la-base-dapprentissage-pour-ce-faire-utilisez-lamethode-predict-de-la-classe-linearregression-en-donnant-comme-argument-les-donneesdapprentissage-ensuite-affichez-les-valeurs-cible-reelles-et-celles-predites" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+
+<span class="c1">#affichage</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y_train</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;************************** prédictions *********************************&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">y_pred</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[500001.]
+ [270000.]
+ [196100.]
+ ...
+ [289300.]
+ [484600.]
+ [ 69400.]]
+************************** prédictions *********************************
+[[152473.]
+ [275083.]
+ [221393.]
+ ...
+ [264242.]
+ [311804.]
+ [ 26024.]]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="calculez-la-mesure-rmse-du-modele-de-la-regression-lineaire">
+<h3>3.  Calculez la mesure RMSE du modèle de la régression linéaire.<a class="headerlink" href="#calculez-la-mesure-rmse-du-modele-de-la-regression-lineaire" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span>
+<span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">squared</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>68717.7964740298
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="refaites-les-deux-etapes-precedentes-avec-le-modele-decisiontreeregressor-calculez-lamesure-rmse-du-modele-decisiontreeregressor-qui-existe-dans-le-sous-module-tree-dumodule-sklearn">
+<h3>4.  Refaites  les  deux  étapes  précédentes  avec  le  modèle  DecisionTreeRegressor.   Calculez  lamesure  RMSE  du  modèle  DecisionTreeRegressor  qui  existe  dans  le  sous-module  tree  dumodule sklearn.<a class="headerlink" href="#refaites-les-deux-etapes-precedentes-avec-le-modele-decisiontreeregressor-calculez-lamesure-rmse-du-modele-decisiontreeregressor-qui-existe-dans-le-sous-module-tree-dumodule-sklearn" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeRegressor</span>
+
+<span class="n">regressor</span> <span class="o">=</span> <span class="n">DecisionTreeRegressor</span><span class="p">(</span><span class="n">criterion</span><span class="o">=</span><span class="s1">&#39;mse&#39;</span><span class="p">)</span>
+<span class="n">regressor</span> <span class="o">=</span> <span class="n">regressor</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">y_tree</span> <span class="o">=</span> <span class="n">regressor</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">y_tree</span><span class="p">,</span> <span class="n">squared</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="meme-si-la-valeur-de-rmse-de-decisiontreeregressor-est-egale-a-0-on-ne-peut-pas-conclureque-ce-modele-fonctionne-parfaitement-sur-la-base-dapprentissage">
+<h3>5.  Même si la valeur de RMSE de DecisionTreeRegressor est égale à 0, on ne peut pas conclureque ce modèle fonctionne parfaitement sur la base d’apprentissage.<a class="headerlink" href="#meme-si-la-valeur-de-rmse-de-decisiontreeregressor-est-egale-a-0-on-ne-peut-pas-conclureque-ce-modele-fonctionne-parfaitement-sur-la-base-dapprentissage" title="Permalink to this headline">¶</a></h3>
+<p>Pour s’assurer, on varépartir la  base  d’apprentissage  en base  d’apprentissage et  en base  de  test en  utilisant laméthode 10-fold cross-validation.
+Pour ce faire, utilisez la fonction cross_val_score du sous-module model_selection du module sklearn. Ensuite, affichez :</p>
+<p>•  La valeur RMSE de chaque fold</p>
+<p>•  La moyenne des RMSE de tous les folds</p>
+<p>•  L’écart type de tous les folds</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">cross_val_score</span>
+
+<span class="n">k</span> <span class="o">=</span> <span class="mi">10</span>    <span class="c1">#nombre de folds</span>
+
+<span class="n">regressor</span> <span class="o">=</span> <span class="n">DecisionTreeRegressor</span><span class="p">(</span><span class="n">criterion</span><span class="o">=</span><span class="s1">&#39;mse&#39;</span><span class="p">)</span>
+<span class="n">scores</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">regressor</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="p">,</span><span class="n">scoring</span><span class="o">=</span><span class="s2">&quot;neg_mean_squared_error&quot;</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span> <span class="n">k</span><span class="p">)</span>
+
+<span class="n">rmse_scores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="o">-</span><span class="n">scores</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">rmse_scores</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;moyenne rmse : &quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">rmse_scores</span><span class="p">))))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ecart-type : &quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">rmse_scores</span><span class="p">))))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[141028.  71237. 104265.  75901.  89285.  83254.  63753. 108717. 103030.
+  75301.]
+moyenne rmse :  91577.0
+ecart-type :  21919.0
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="suivre-les-etapes-de-la-question-precedente-sur-le-modele-de-la-regression-lineaire-ensuite-comparez-les-resultats-avec-ceux-du-decisiontreeregressor-quel-modele-presente-un-prob-leme-dapprentissage-pourquoi">
+<h3>6.  Suivre les étapes de la question précédente sur le modèle de la régression linéaire.  Ensuite,comparez les résultats avec ceux du DecisionTreeRegressor. Quel modèle présente un prob-lème d’apprentissage ? pourquoi ?<a class="headerlink" href="#suivre-les-etapes-de-la-question-precedente-sur-le-modele-de-la-regression-lineaire-ensuite-comparez-les-resultats-avec-ceux-du-decisiontreeregressor-quel-modele-presente-un-prob-leme-dapprentissage-pourquoi" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">cross_val_score</span>
+
+<span class="n">k</span> <span class="o">=</span> <span class="mi">10</span>    <span class="c1">#nombre de folds</span>
+
+<span class="n">reg</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
+<span class="n">scores</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">reg</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="p">,</span><span class="n">scoring</span><span class="o">=</span><span class="s2">&quot;neg_mean_squared_error&quot;</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span> <span class="n">k</span><span class="p">)</span>
+
+<span class="n">rmse_scores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="o">-</span><span class="n">scores</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">rmse_scores</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;moyenne rmse : &quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">rmse_scores</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ecart-type : &quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">rmse_scores</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[85453.3220931  59733.90627769 88058.11020226 62803.86299438
+ 80785.8681941  69653.91713994 52462.39353981 91536.72825902
+ 78105.508377   53546.26150442]
+moyenne rmse :  72213.98785817125
+ecart-type :  13774.38913556604
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="le-modele-de-regression-lineaire-est-legerement-meilleur-que-le-decision-tree-erreur-moyenne-tree-91000-erreur-moyenne-lineaire-72000">
+<h4>Le modèle de regression linéaire est légèrement meilleur que le decision tree (erreur moyenne tree: 91000, erreur moyenne lineaire: 72000)<a class="headerlink" href="#le-modele-de-regression-lineaire-est-legerement-meilleur-que-le-decision-tree-erreur-moyenne-tree-91000-erreur-moyenne-lineaire-72000" title="Permalink to this headline">¶</a></h4>
+</div>
+</div>
+</div>
+<div class="section" id="fine-tunning">
+<h2>3  Fine-Tunning<a class="headerlink" href="#fine-tunning" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="grid-search">
+<h3>3.1  Grid Search<a class="headerlink" href="#grid-search" title="Permalink to this headline">¶</a></h3>
+<p>Dans cette, partie nous allons chercher les paramètres du modèle de régression qui donnent lesmeilleurs résultats</p>
+<div class="section" id="ecrire-un-code-qui">
+<h4>1.  Écrire un code qui :<a class="headerlink" href="#ecrire-un-code-qui" title="Permalink to this headline">¶</a></h4>
+<p>•  Crée un objet de la classe RandomForestRegressor</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">GridSearchCV</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestRegressor</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">MinMaxScaler</span>
+
+<span class="n">forest_reg</span> <span class="o">=</span> <span class="n">RandomForestRegressor</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="cree-la-variable-suivante-param-grid-n-estimators-3-10-30-max-f-eatures-2-4-6-8-cette-variable-contient-un-dictionnaire-avec-quelques-valeurs-de-deux-parametres-de-lamethode-randomforestregressor-au-total-4x3-12-combinaisons-vont-etre-testees">
+<h4>Crée la variable suivante :param_grid= [′n_estimators′:[3, 10, 30],′max_f eatures′:[2, 4, 6, 8]]Cette variable contient un dictionnaire avec quelques valeurs de deux paramètres de laméthode RandomForestRegressor. Au total, 4x3=12 combinaisons vont être testées.<a class="headerlink" href="#cree-la-variable-suivante-param-grid-n-estimators-3-10-30-max-f-eatures-2-4-6-8-cette-variable-contient-un-dictionnaire-avec-quelques-valeurs-de-deux-parametres-de-lamethode-randomforestregressor-au-total-4x3-12-combinaisons-vont-etre-testees" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">param_grid</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s1">&#39;n_estimators&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">],</span> <span class="s1">&#39;max_features&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">]}</span>
+    <span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="applique-une-recherche-de-type-gridsearch-du-couple-qui-donne-le-meilleur-resultat-pour-ce-faire-utilisez-la-fonction-gridsearchcv-du-sous-module-model-selection-dumodule-sklearn-optez-pour-une-valeur-de-5-pour-cv-une-validation-croisee-de-type5-fold-cross-validation">
+<h4>Applique une recherche, de type GridSearch, du couple qui donne le meilleur résultat.Pour ce faire, utilisez la fonction GridSearchCV du sous-module model_selection dumodule sklearn. Optez pour une valeur de 5 pour “cv” (une validation croisée de type5-fold cross-validation)<a class="headerlink" href="#applique-une-recherche-de-type-gridsearch-du-couple-qui-donne-le-meilleur-resultat-pour-ce-faire-utilisez-la-fonction-gridsearchcv-du-sous-module-model-selection-dumodule-sklearn-optez-pour-une-valeur-de-5-pour-cv-une-validation-croisee-de-type5-fold-cross-validation" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grid_search</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">forest_reg</span><span class="p">,</span> <span class="n">param_grid</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+                          <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;neg_mean_squared_error&#39;</span><span class="p">)</span>
+<span class="n">grid_search</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:531: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  estimator.fit(X_train, y_train, **fit_params)
+C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:531: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  estimator.fit(X_train, y_train, **fit_params)
+C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:531: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  estimator.fit(X_train, y_train, **fit_params)
+C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:531: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  estimator.fit(X_train, y_train, **fit_params)
+C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:531: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  estimator.fit(X_train, y_train, **fit_params)
+C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:531: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  estimator.fit(X_train, y_train, **fit_params)
+C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:531: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  estimator.fit(X_train, y_train, **fit_params)
+C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:531: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  estimator.fit(X_train, y_train, **fit_params)
+C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:531: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  estimator.fit(X_train, y_train, **fit_params)
+C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:531: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  estimator.fit(X_train, y_train, **fit_params)
+C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:531: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  estimator.fit(X_train, y_train, **fit_params)
+C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:531: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  estimator.fit(X_train, y_train, **fit_params)
+C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:531: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  estimator.fit(X_train, y_train, **fit_params)
+C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:531: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  estimator.fit(X_train, y_train, **fit_params)
+C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:531: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  estimator.fit(X_train, y_train, **fit_params)
+C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:531: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  estimator.fit(X_train, y_train, **fit_params)
+C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:531: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  estimator.fit(X_train, y_train, **fit_params)
+C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:531: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  estimator.fit(X_train, y_train, **fit_params)
+C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:531: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  estimator.fit(X_train, y_train, **fit_params)
+C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:531: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  estimator.fit(X_train, y_train, **fit_params)
+C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:531: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  estimator.fit(X_train, y_train, **fit_params)
+C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:531: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  estimator.fit(X_train, y_train, **fit_params)
+C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:531: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  estimator.fit(X_train, y_train, **fit_params)
+C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:531: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  estimator.fit(X_train, y_train, **fit_params)
+C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:531: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  estimator.fit(X_train, y_train, **fit_params)
+C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:531: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  estimator.fit(X_train, y_train, **fit_params)
+C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:531: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  estimator.fit(X_train, y_train, **fit_params)
+C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:531: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  estimator.fit(X_train, y_train, **fit_params)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:531: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  estimator.fit(X_train, y_train, **fit_params)
+C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:531: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  estimator.fit(X_train, y_train, **fit_params)
+C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:531: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  estimator.fit(X_train, y_train, **fit_params)
+C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:531: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  estimator.fit(X_train, y_train, **fit_params)
+C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:531: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  estimator.fit(X_train, y_train, **fit_params)
+C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:531: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  estimator.fit(X_train, y_train, **fit_params)
+C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:531: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  estimator.fit(X_train, y_train, **fit_params)
+C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:531: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  estimator.fit(X_train, y_train, **fit_params)
+C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:531: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  estimator.fit(X_train, y_train, **fit_params)
+C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:531: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  estimator.fit(X_train, y_train, **fit_params)
+C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:531: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  estimator.fit(X_train, y_train, **fit_params)
+C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:531: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  estimator.fit(X_train, y_train, **fit_params)
+C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:531: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  estimator.fit(X_train, y_train, **fit_params)
+C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:531: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  estimator.fit(X_train, y_train, **fit_params)
+C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:531: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  estimator.fit(X_train, y_train, **fit_params)
+C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:531: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  estimator.fit(X_train, y_train, **fit_params)
+C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:531: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  estimator.fit(X_train, y_train, **fit_params)
+C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:531: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  estimator.fit(X_train, y_train, **fit_params)
+C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:531: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  estimator.fit(X_train, y_train, **fit_params)
+C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:531: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  estimator.fit(X_train, y_train, **fit_params)
+C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:531: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  estimator.fit(X_train, y_train, **fit_params)
+C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:531: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  estimator.fit(X_train, y_train, **fit_params)
+C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:531: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  estimator.fit(X_train, y_train, **fit_params)
+C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:531: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  estimator.fit(X_train, y_train, **fit_params)
+C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:531: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  estimator.fit(X_train, y_train, **fit_params)
+C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:531: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  estimator.fit(X_train, y_train, **fit_params)
+C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:531: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  estimator.fit(X_train, y_train, **fit_params)
+C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:531: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  estimator.fit(X_train, y_train, **fit_params)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:531: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  estimator.fit(X_train, y_train, **fit_params)
+C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:531: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  estimator.fit(X_train, y_train, **fit_params)
+C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:531: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  estimator.fit(X_train, y_train, **fit_params)
+C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:531: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  estimator.fit(X_train, y_train, **fit_params)
+C:\Users\utilisateur\anaconda3\lib\site-packages\sklearn\model_selection\_search.py:765: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  self.best_estimator_.fit(X, y, **fit_params)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>GridSearchCV(cv=5, estimator=RandomForestRegressor(),
+             param_grid=[{&#39;max_features&#39;: [2, 4, 6, 8],
+                          &#39;n_estimators&#39;: [3, 10, 30]}],
+             scoring=&#39;neg_mean_squared_error&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="affichez-les-meilleurs-parametres-de-la-methode-randomforestregressor-en-utilisant-lafonction-best-params">
+<h4>2.  Affichez  les  meilleurs  paramètres  de  la  méthode  RandomForestRegressor  en  utilisant  lafonction best_params_<a class="headerlink" href="#affichez-les-meilleurs-parametres-de-la-methode-randomforestregressor-en-utilisant-lafonction-best-params" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grid_search</span><span class="o">.</span><span class="n">best_params_</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;max_features&#39;: 4, &#39;n_estimators&#39;: 30}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="affichez-les-resultats-des-12-combinaisons-avec-la-fonction-grid-search">
+<h4>3.  Affichez les résultats des 12 combinaisons avec la fonction grid-search<a class="headerlink" href="#affichez-les-resultats-des-12-combinaisons-avec-la-fonction-grid-search" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">resultats</span> <span class="o">=</span> <span class="n">grid_search</span><span class="o">.</span><span class="n">cv_results_</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="se">\t\t</span><span class="s2"> </span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;Mean Score&#39;</span><span class="p">,</span><span class="s1">&#39;Parameters&#39;</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">mean_score</span><span class="p">,</span> <span class="n">params</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">resultats</span><span class="p">[</span><span class="s2">&quot;mean_test_score&quot;</span><span class="p">],</span> <span class="n">resultats</span><span class="p">[</span><span class="s2">&quot;params&quot;</span><span class="p">]):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="o">-</span><span class="n">mean_score</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">params</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{:.2f}</span><span class="se">\t</span><span class="s2"> </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mean Score		 Parameters
+
+80596.00	 {&#39;max_features&#39;: 2, &#39;n_estimators&#39;: 3}
+76114.34	 {&#39;max_features&#39;: 2, &#39;n_estimators&#39;: 10}
+72972.06	 {&#39;max_features&#39;: 2, &#39;n_estimators&#39;: 30}
+81613.74	 {&#39;max_features&#39;: 4, &#39;n_estimators&#39;: 3}
+73579.04	 {&#39;max_features&#39;: 4, &#39;n_estimators&#39;: 10}
+71356.29	 {&#39;max_features&#39;: 4, &#39;n_estimators&#39;: 30}
+79133.78	 {&#39;max_features&#39;: 6, &#39;n_estimators&#39;: 3}
+78972.15	 {&#39;max_features&#39;: 6, &#39;n_estimators&#39;: 10}
+72871.68	 {&#39;max_features&#39;: 6, &#39;n_estimators&#39;: 30}
+93921.91	 {&#39;max_features&#39;: 8, &#39;n_estimators&#39;: 3}
+80860.47	 {&#39;max_features&#39;: 8, &#39;n_estimators&#39;: 10}
+76189.99	 {&#39;max_features&#39;: 8, &#39;n_estimators&#39;: 30}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="evaluation-sur-la-base-de-test">
+<h3>3.2  Evaluation sur la base de test<a class="headerlink" href="#evaluation-sur-la-base-de-test" title="Permalink to this headline">¶</a></h3>
+<p>Testez votre modèle d’apprentissage sur la base de test.
+Pour ce faire, pensez à :</p>
+<ol class="simple">
+<li><p>Remplacer les valeurs NaN de l’attribut “total_bedrooms” de la base de test par la médiane</p></li>
+<li><p>Transformer les valeurs textuelles de “ocean_proximity” en valeurs numériques</p></li>
+<li><p>Stocker le modèle d’apprentissage dans une variable en utilisant la fonction best_estimator_du module GridSearchCV4.</p></li>
+</ol>
+<p>Calculer la valeur RMSE du modèle sur la base de test</p>
+<div class="section" id="les-donnees-avaient-ete-preparees-avant-le-split">
+<h4>les donnees avaient été préparées avant le split<a class="headerlink" href="#les-donnees-avaient-ete-preparees-avant-le-split" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># stocker le meilleur modele</span>
+<span class="n">modele</span> <span class="o">=</span> <span class="n">grid_search</span><span class="o">.</span><span class="n">best_estimator_</span>
+
+<span class="n">predictions</span> <span class="o">=</span> <span class="n">modele</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="n">mse</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predictions</span><span class="p">)</span>
+
+<span class="c1"># calcul du RMSE</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mse</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18828.02498791018
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="regression_logistic.html" title="previous page">1. Importez les bibliothéques necessaires</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book community<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

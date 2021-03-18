@@ -1,0 +1,4101 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1. Importez les bibliothéques necessaires &#8212; Cahier d&#39;apprentissage Aude</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Brief 3 Decision tree, random Forest –Aude" href="brief3_Aude.html" />
+    <link rel="prev" title="1. Installer la bibliothèque opencv" href="open_cv.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/pandas.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Cahier d'apprentissage Aude</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Cahier d’apprentissage
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="notes_python.html">
+   Notes diverses code python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html">
+   1. Importez le package numpy sous le nom np
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#creer-un-vecteur-des-valeurs-0-de-taille-15">
+   2. Créer un vecteur des valeurs 0 de taille 15
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#creez-un-vecteur-nul-de-taille-10-mais-la-cinquieme-valeur-qui-est-1">
+   3. Créez un vecteur nul de taille 10 mais la cinquième valeur qui est 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#creez-un-vecteur-avec-des-valeurs-allant-de-10-a-49">
+   4. Créez un vecteur avec des valeurs allant de 10 à 49
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#inverser-un-vecteur">
+   5. Inverser un vecteur
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#creez-un-vecteur-aleatoire-de-taille-30-et-trouvez-la-valeur-moyenne">
+   6. Créez un vecteur aléatoire de taille 30 et trouvez la valeur moyenne
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#rechercher-des-indices-d-elements-non-nuls-a-partir-de-0-3-1-2-0-0-4-0">
+   7. Rechercher des indices d’éléments non nuls à partir de [0,3,1,2,0,0,4,0]
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#etant-donne-un-tableau-1d-negativez-tous-les-elements-qui-sont-entre-2-et-7">
+   8. Étant donné un tableau 1D, négativez tous les éléments qui sont entre 2 et 7.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#comment-extraire-tous-les-nombres-entre-un-intervalle-donne-d-un-tableau-numpy">
+   9. Comment extraire tous les nombres entre un intervalle donné d’un tableau numpy?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#comment-trouver-des-valeurs-communes-entre-deux-tableaux">
+   10. Comment trouver des valeurs communes entre deux tableaux?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#comment-concatener-deux-tableaux-verticalment-horizontalement">
+   11. Comment concaténer deux tableaux verticalment &amp; horizontalement
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#creer-une-matrice-aletoire-de-taille-6-4">
+   12. Créer une matrice alétoire de taille (6,4)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#faire-le-transpose-une-matrice">
+   13. Faire le transposé une matrice
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#creer-une-matrice-d-identite-de-taille-3x3">
+   14. Créer une matrice d’identité de taille 3x3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#creer-un-tableau-3x5x5-avec-des-valeurs-aleatoires">
+   15. Créer un tableau 3x5x5 avec des valeurs aléatoires
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#creez-un-tableau-10x10-avec-des-valeurs-aleatoires-et-trouvez-les-valeurs-minimum-et-maximum">
+   16. Créez un tableau 10x10 avec des valeurs aléatoires et trouvez les valeurs minimum et maximum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#creez-un-tableau-2d-avec-1-sur-les-extremites-et-0-a-l-interieur">
+   17. Créez un tableau 2D avec 1 sur les extrémités et 0 à l’intérieur
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#creer-une-matrice-5x5-avec-des-valeurs-1-2-3-4-juste-en-dessous-de-la-diagonale">
+   18. Créer une matrice 5x5 avec des valeurs 1,2,3,4 juste en dessous de la diagonale
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#normaliser-une-matrice-aleatoire-5x5">
+   19. Normaliser une matrice aléatoire 5x5
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#multiplier-une-matrice-5x3-par-une-matrice-3x2">
+   20. Multiplier une matrice 5x3 par une matrice 3x2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#comment-obtenir-les-positions-ou-on-a-les-meme-elements-dans-les-deux-tableaux">
+   21. Comment obtenir les positions où on a les même éléments dans les deux tableaux ?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#comment-trouver-l-index-de-la-n-ieme-repetition-d-un-element-dans-un-tableau-1d">
+   22. Comment trouver l’index de la n ième répétition d’un élément dans un tableau 1D
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#comment-soustraire-un-tableau-1d-d-un-tableau-2d-ou-chaque-element-du-tableau-1d-soustrait-de-la-ligne-respective">
+   23. Comment soustraire un tableau 1d d’un tableau 2d, où chaque élément du tableau 1d soustrait de la ligne respective?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#comment-supprimer-toutes-les-valeurs-manquantes-d-un-tableau-numpy-avec-for">
+   24. Comment supprimer toutes les valeurs manquantes d’un tableau numpy? (avec for)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_cv.html">
+   1. Installer la bibliothèque opencv
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_cv.html#importer-la-bibliotheque">
+   2. Importer la bibliothèque
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_cv.html#lire-une-image-et-afficher-son-type">
+   1. Lire une image et afficher son type
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_cv.html#afficher-cette-image-et-sa-taille">
+   2. Afficher cette image et sa taille
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_cv.html#rotation-de-l-image">
+   3. Rotation de l’image
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_cv.html#recadrer-une-image">
+   4. Recadrer une image
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_cv.html#redimensionner-une-image">
+   5. Redimensionner une image
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_cv.html#ajuster-le-contraste-de-l-image">
+   6. Ajuster le contraste de l’image
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_cv.html#rendre-une-image-floue">
+   7. Rendre une image floue
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_cv.html#detecter-les-contours">
+   8. Detecter les contours
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_cv.html#convertir-une-image-en-niveau-de-gris">
+   9. Convertir une image en niveau de gris
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_cv.html#les-canneaux-rouge-vert-bleu">
+   10. Les canneaux Rouge, Vert, Bleu
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_cv.html#detection-du-centre-de-gravite-de-l-image">
+   11. Détection du centre de gravité de l’image
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_cv.html#extraction-de-texte-a-partir-d-une-image-ocr">
+   12. Extraction de texte à partir d’une image (OCR)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_cv.html#reduire-le-bruit-pour-une-image-couleur-et-en-niveau-de-gris">
+   13. Réduire le bruit pour une image couleur et en niveau de gris
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_cv.html#detection-des-visages-avec-la-methode-de-viola-et-jones">
+   14. Detection des visages avec la méthode de Viola et Jones
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   1. Importez les bibliothéques necessaires
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#importez-le-jeu-de-donnees-weatheraus-csv">
+   2. Importez le jeu de données ‘weatherAUS.csv’
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#exploration-des-donnees">
+   3. Exploration des données
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#manipulation-d-une-variable-de-type-date">
+   4. Manipulation d’une variable de type date
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#exploration-des-variables-quantitatives">
+   5. Exploration des variables quantitatives
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#notre-variable-target-y-est-le-raintomorrow-recuprer-x-et-y-a-partir-du-jeu-de-donnees">
+   6. Notre variable target (Y) est le RainTomorrow, Récuprer X et Y à partir du jeu de données
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#fractionnement-le-jeu-de-donnees-en-jeu-d-entrainement-et-jeu-de-test-20-pour-le-test">
+   7. Fractionnement le jeu de données en jeu d’entraînement et jeu de test (20% pour le test)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#checker-les-valeurs-manquantes-des-variables-quantitatives-du-jeu-d-entrainement-et-de-test">
+   8. Checker les valeurs manquantes des variables quantitatives du jeu d’entraînement et de test
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#en-utilisant-simpleimputer-de-scikit-learn-remplacer-les-valeurs-manquantes-dans-les-variables-numerique-entrainement-et-test-par-la-moyenne">
+   9. En utilisant SimpleImputer de Scikit-Learn remplacer les valeurs manquantes dans les variables numérique (entraînement et test) par la moyenne
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#verifier-que-les-valeurs-manquantes-n-existent-plus-dans-les-variables-quantitatives-entrainement-et-test">
+   10. Vérifier que les valeurs manquantes n’existent plus dans les variables quantitatives (entraînement et test)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#en-utilisant-la-fonction-fillna-et-mode-remplacer-les-valeurs-manquantes-dans-les-variables-qualitatives-par-la-valeur-la-plus-frequante-pour-chaque-variable">
+   11. En utilisant la fonction fillna() et mode() remplacer les valeurs manquantes dans les variables qualitatives par la valeur la plus fréquante pour chaque variable.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#verifier-que-les-valeurs-manquantes-n-existent-plus-dans-les-variables-qualitative-entrainement-et-test">
+   12. Vérifier que les valeurs manquantes n’existent plus dans les variables qualitative (entraînement et test)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#encoder-la-variable-qualitative-raintoday-en-utilisant-le-module-category-encoders-et-la-fonction-binaryencoder-cols-raintoday-pour-le-jeu-d-entrainement-et-de-test">
+   13. Encoder la variable qualitative ‘RainToday’ en utilisant le module category_encoders et la fonction BinaryEncoder(cols=[‘RainToday’]) pour le jeu d’entraînement et de test.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#recreer-un-nouveau-jeu-d-entrainement-en-concatenant-les-variables-numeriques-du-jeu-d-entrainement-precedent-avec-les-deux-colonnes-raintoday-0-raintoday-1-qui-vont-se-creer-a-l-aide-de-l-etape-precedente-plus-les-variables-qualitatives-transformees-a-des-variables-muettes-avec-la-fonction-get-dummies-de-pandas">
+   14. Recréer un nouveau jeu d’entrainement en concatenant les variables numériques du jeu d’entrainement précedent avec les deux colonnes RainToday_0’, ‘RainToday_1’qui vont se créer à l’aide de l’étape précedente, plus les variables qualitatives transformées à des variables muettes avec la fonction get_dummies() de pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#refaire-l-etape-precedente-pour-le-jeu-de-test">
+   15. Refaire l’étape précedente pour le jeu de test
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#standariser-votre-jeu-d-entrainement-et-de-test-a-l-aide-de-standardscaler">
+   16. Standariser votre jeu d’entrainement et de test à l’aide de StandardScaler
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#creer-votre-modele-de-regression-logistique-et-entrainez-le-sur-les-donnees-d-entrainement">
+   17. Créer votre modèle de régression logistique et entraînez le sur les données d’entraînement
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#predire-les-resultats-du-modele-sur-l-ensemble-du-test">
+   18. Predire les résultats du modèle sur l’ensemble du test
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#afficher-la-matrice-de-confusion-tp-tn-fp-fn-sur-le-jeu-du-test-en-utilisant-la-fonction-confusion-matrix">
+   19. Afficher la matrice de confusion, TP, TN, FP, FN sur le jeu du test en utilisant la fonction confusion_matrix
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#calculer-les-metriques-de-classification-accuracy-classification-error-precision-recall-specificity-en-utilisant-seulement-les-valeurs-de-tp-tn-fp-fn">
+   20. Calculer les métriques de classification (accuracy, classification error, precision, recall, specificity) en utilisant seulement les valeurs de TP, TN, FP, FN.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="brief3_Aude.html">
+   Brief 3 Decision tree, random Forest  –Aude
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/regression_logistic.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/regression_logistic.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   1. Importez les bibliothéques necessaires
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#importez-le-jeu-de-donnees-weatheraus-csv">
+   2. Importez le jeu de données ‘weatherAUS.csv’
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exploration-des-donnees">
+   3. Exploration des données
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dimension-de-du-jeu-de-donnees">
+     Dimension de du jeu de données
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#previsulaiser-le-jeu-de-donnees">
+     Prévisulaiser le jeu de données
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#afficher-la-liste-des-labels-des-colonnes">
+     Afficher la liste des labels des colonnes
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#supprimer-la-colonne-risk-mm-du-jeu-de-donnees">
+     Supprimer la colonne ‘RISK_MM’ du jeu de données
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#verifier-si-la-colonne-est-supprimee">
+     Vérifier si la colonne est supprimée
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#afficher-un-summary-du-jeu-de-donnees">
+     Afficher un summary du jeu de données
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#afficher-la-liste-des-noms-des-variables-qualitatives">
+     Afficher la liste des noms des variables qualitatives
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#afficher-le-contenu-de-ces-variables-qualitatives">
+     Afficher le contenu de ces variables qualitatives
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#checker-le-nombre-des-valeurs-manquantes-dans-chaque-variable-qualitative">
+     Checker le nombre des valeurs manquantes dans chaque variable qualitative
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#afficher-les-variables-qualitatives-qui-contiennent-des-valeurs-manquantes">
+     Afficher les variables qualitatives qui contiennent des valeurs manquantes
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#afficher-la-frequence-des-variables-qualitatives">
+     Afficher la fréquence des variables qualitatives
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nombre-de-labels-cardinalite">
+     Nombre de labels: cardinalité
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#manipulation-d-une-variable-de-type-date">
+   4. Manipulation d’une variable de type date
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#transformer-la-variable-date-qui-est-code-comme-strings-a-une-variable-date-de-type-datetime-format">
+     Transformer la variable ‘Date’, qui est codé  comme strings, à une variable ‘Date’ de type datetime format
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extraire-l-annee-a-partir-de-la-variable-date-et-l-ajouter-dans-le-jeu-de-donnees-dans-une-colonne-separee-years">
+     Extraire l’année à partir de la variable Date et l’ajouter dans le jeu de données dans une colonne separée ‘Years’
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extraire-le-mois-a-partir-de-la-variable-date-et-l-ajouter-dans-le-jeu-de-donnees-dans-une-colonne-separee-month">
+     Extraire le mois à partir de la variable Date et l’ajouter dans le  jeu de données dans une colonne separée ‘Month’
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extraire-le-jour-a-partir-de-la-variable-date-et-l-ajouter-dans-le-jeu-de-donnees-dans-une-colonne-separee-day">
+     Extraire le jour à partir de la variable Date et l’ajouter dans le  jeu de données dans une colonne separée ‘Day’
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#supprimer-la-variable-date-du-jeu-de-donnees">
+     Supprimer la variable Date du  jeu de données
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exploration-des-variables-quantitatives">
+   5. Exploration des variables quantitatives
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#afficher-la-liste-des-variables-quantitatives-dans-le-jeu-de-donnees">
+     Afficher la liste des variables quantitatives dans le jeu de données
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualiser-le-contenu-des-variables-quantitatives-dans-le-jeu-de-donnees">
+     Visualiser le contenu des variables quantitatives dans le jeu de données
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#checker-les-valeurs-manquantes-dans-les-variables-quantitatives">
+     Checker les valeurs manquantes dans les variables quantitatives
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#afficher-le-resume-statistique-des-variables-quantitatives-describe">
+     Afficher le résumé statistique des variables quantitatives (describe())
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#notre-variable-target-y-est-le-raintomorrow-recuprer-x-et-y-a-partir-du-jeu-de-donnees">
+   6. Notre variable target (Y) est le RainTomorrow, Récuprer X et Y à partir du jeu de données
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fractionnement-le-jeu-de-donnees-en-jeu-d-entrainement-et-jeu-de-test-20-pour-le-test">
+   7. Fractionnement le jeu de données en jeu d’entraînement et jeu de test (20% pour le test)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#checker-les-valeurs-manquantes-des-variables-quantitatives-du-jeu-d-entrainement-et-de-test">
+   8. Checker les valeurs manquantes des variables quantitatives du jeu d’entraînement et de test
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#en-utilisant-simpleimputer-de-scikit-learn-remplacer-les-valeurs-manquantes-dans-les-variables-numerique-entrainement-et-test-par-la-moyenne">
+   9. En utilisant SimpleImputer de Scikit-Learn remplacer les valeurs manquantes dans les variables numérique (entraînement et test) par la moyenne
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#verifier-que-les-valeurs-manquantes-n-existent-plus-dans-les-variables-quantitatives-entrainement-et-test">
+   10. Vérifier que les valeurs manquantes n’existent plus dans les variables quantitatives (entraînement et test)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#en-utilisant-la-fonction-fillna-et-mode-remplacer-les-valeurs-manquantes-dans-les-variables-qualitatives-par-la-valeur-la-plus-frequante-pour-chaque-variable">
+   11. En utilisant la fonction fillna() et mode() remplacer les valeurs manquantes dans les variables qualitatives par la valeur la plus fréquante pour chaque variable.
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#verifier-que-les-valeurs-manquantes-n-existent-plus-dans-les-variables-qualitative-entrainement-et-test">
+   12. Vérifier que les valeurs manquantes n’existent plus dans les variables qualitative (entraînement et test)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#encoder-la-variable-qualitative-raintoday-en-utilisant-le-module-category-encoders-et-la-fonction-binaryencoder-cols-raintoday-pour-le-jeu-d-entrainement-et-de-test">
+   13. Encoder la variable qualitative ‘RainToday’ en utilisant le module category_encoders et la fonction BinaryEncoder(cols=[‘RainToday’]) pour le jeu d’entraînement et de test.
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recreer-un-nouveau-jeu-d-entrainement-en-concatenant-les-variables-numeriques-du-jeu-d-entrainement-precedent-avec-les-deux-colonnes-raintoday-0-raintoday-1-qui-vont-se-creer-a-l-aide-de-l-etape-precedente-plus-les-variables-qualitatives-transformees-a-des-variables-muettes-avec-la-fonction-get-dummies-de-pandas">
+   14. Recréer un nouveau jeu d’entrainement en concatenant les variables numériques du jeu d’entrainement précedent avec les deux colonnes RainToday_0’, ‘RainToday_1’qui vont se créer à l’aide de l’étape précedente, plus les variables qualitatives transformées à des variables muettes avec la fonction get_dummies() de pandas
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#refaire-l-etape-precedente-pour-le-jeu-de-test">
+   15. Refaire l’étape précedente pour le jeu de test
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#standariser-votre-jeu-d-entrainement-et-de-test-a-l-aide-de-standardscaler">
+   16. Standariser votre jeu d’entrainement et de test à l’aide de StandardScaler
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creer-votre-modele-de-regression-logistique-et-entrainez-le-sur-les-donnees-d-entrainement">
+   17. Créer votre modèle de régression logistique et entraînez le sur les données d’entraînement
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#predire-les-resultats-du-modele-sur-l-ensemble-du-test">
+   18. Predire les résultats du modèle sur l’ensemble du test
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calculer-la-probabilite-que-demain-va-pleuvoir-ou-pas-en-utilisant-la-fonction-predict-proba-sur-le-jeu-de-test">
+     Calculer la probabilité que demain va pleuvoir ou pas en utilisant la fonction predict_proba sur le jeu de test
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#afficher-l-accuracy-score-en-utilisant-la-fonction-accuracy-score-sur-le-jeu-de-test">
+     Afficher l’accuracy score en utilisant la fonction accuracy_score sur le jeu de test
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#comparer-l-accuracy-du-modele-sur-l-ensemble-d-apprentissage-et-l-ensemble-de-test-qu-est-ce-que-vous-remarquez">
+     Comparer l’accuracy du modèle sur l’ensemble d’apprentissage et l’ensemble de test, qu’est ce que vous remarquez ?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#afficher-la-matrice-de-confusion-tp-tn-fp-fn-sur-le-jeu-du-test-en-utilisant-la-fonction-confusion-matrix">
+   19. Afficher la matrice de confusion, TP, TN, FP, FN sur le jeu du test en utilisant la fonction confusion_matrix
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calculer-les-metriques-de-classification-accuracy-classification-error-precision-recall-specificity-en-utilisant-seulement-les-valeurs-de-tp-tn-fp-fn">
+   20. Calculer les métriques de classification (accuracy, classification error, precision, recall, specificity) en utilisant seulement les valeurs de TP, TN, FP, FN.
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <h1><center> Régression Logistique </center></h1>
+<div class="section" id="importez-les-bibliotheques-necessaires">
+<h1>1. Importez les bibliothéques necessaires<a class="headerlink" href="#importez-les-bibliotheques-necessaires" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="importez-le-jeu-de-donnees-weatheraus-csv">
+<h1>2. Importez le jeu de données ‘weatherAUS.csv’<a class="headerlink" href="#importez-le-jeu-de-donnees-weatheraus-csv" title="Permalink to this headline">¶</a></h1>
+<p>Ce jeu de données contient des observations météorologiques quotidiennes de nombreuses stations météorologiques australiennes.</p>
+<p>Pour plus d’information sur le jeu de données: <a class="reference external" href="https://www.kaggle.com/jsphyg/weather-dataset-rattle-package">https://www.kaggle.com/jsphyg/weather-dataset-rattle-package</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;weatherAUS.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exploration-des-donnees">
+<h1>3. Exploration des données<a class="headerlink" href="#exploration-des-donnees" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="dimension-de-du-jeu-de-donnees">
+<h2>Dimension de du jeu de données<a class="headerlink" href="#dimension-de-du-jeu-de-donnees" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(142193, 24)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="previsulaiser-le-jeu-de-donnees">
+<h2>Prévisulaiser le jeu de données<a class="headerlink" href="#previsulaiser-le-jeu-de-donnees" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date</th>
+      <th>Location</th>
+      <th>MinTemp</th>
+      <th>MaxTemp</th>
+      <th>Rainfall</th>
+      <th>Evaporation</th>
+      <th>Sunshine</th>
+      <th>WindGustDir</th>
+      <th>WindGustSpeed</th>
+      <th>WindDir9am</th>
+      <th>...</th>
+      <th>Humidity3pm</th>
+      <th>Pressure9am</th>
+      <th>Pressure3pm</th>
+      <th>Cloud9am</th>
+      <th>Cloud3pm</th>
+      <th>Temp9am</th>
+      <th>Temp3pm</th>
+      <th>RainToday</th>
+      <th>RISK_MM</th>
+      <th>RainTomorrow</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2008-12-01</td>
+      <td>Albury</td>
+      <td>13.4</td>
+      <td>22.9</td>
+      <td>0.6</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>W</td>
+      <td>44.0</td>
+      <td>W</td>
+      <td>...</td>
+      <td>22.0</td>
+      <td>1007.7</td>
+      <td>1007.1</td>
+      <td>8.0</td>
+      <td>NaN</td>
+      <td>16.9</td>
+      <td>21.8</td>
+      <td>No</td>
+      <td>0.0</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2008-12-02</td>
+      <td>Albury</td>
+      <td>7.4</td>
+      <td>25.1</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>WNW</td>
+      <td>44.0</td>
+      <td>NNW</td>
+      <td>...</td>
+      <td>25.0</td>
+      <td>1010.6</td>
+      <td>1007.8</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>17.2</td>
+      <td>24.3</td>
+      <td>No</td>
+      <td>0.0</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2008-12-03</td>
+      <td>Albury</td>
+      <td>12.9</td>
+      <td>25.7</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>WSW</td>
+      <td>46.0</td>
+      <td>W</td>
+      <td>...</td>
+      <td>30.0</td>
+      <td>1007.6</td>
+      <td>1008.7</td>
+      <td>NaN</td>
+      <td>2.0</td>
+      <td>21.0</td>
+      <td>23.2</td>
+      <td>No</td>
+      <td>0.0</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2008-12-04</td>
+      <td>Albury</td>
+      <td>9.2</td>
+      <td>28.0</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NE</td>
+      <td>24.0</td>
+      <td>SE</td>
+      <td>...</td>
+      <td>16.0</td>
+      <td>1017.6</td>
+      <td>1012.8</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>18.1</td>
+      <td>26.5</td>
+      <td>No</td>
+      <td>1.0</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2008-12-05</td>
+      <td>Albury</td>
+      <td>17.5</td>
+      <td>32.3</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>W</td>
+      <td>41.0</td>
+      <td>ENE</td>
+      <td>...</td>
+      <td>33.0</td>
+      <td>1010.8</td>
+      <td>1006.0</td>
+      <td>7.0</td>
+      <td>8.0</td>
+      <td>17.8</td>
+      <td>29.7</td>
+      <td>No</td>
+      <td>0.2</td>
+      <td>No</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 24 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="afficher-la-liste-des-labels-des-colonnes">
+<h2>Afficher la liste des labels des colonnes<a class="headerlink" href="#afficher-la-liste-des-labels-des-colonnes" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">col_names</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span>
+
+<span class="n">col_names</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;Date&#39;, &#39;Location&#39;, &#39;MinTemp&#39;, &#39;MaxTemp&#39;, &#39;Rainfall&#39;, &#39;Evaporation&#39;,
+       &#39;Sunshine&#39;, &#39;WindGustDir&#39;, &#39;WindGustSpeed&#39;, &#39;WindDir9am&#39;, &#39;WindDir3pm&#39;,
+       &#39;WindSpeed9am&#39;, &#39;WindSpeed3pm&#39;, &#39;Humidity9am&#39;, &#39;Humidity3pm&#39;,
+       &#39;Pressure9am&#39;, &#39;Pressure3pm&#39;, &#39;Cloud9am&#39;, &#39;Cloud3pm&#39;, &#39;Temp9am&#39;,
+       &#39;Temp3pm&#39;, &#39;RainToday&#39;, &#39;RISK_MM&#39;, &#39;RainTomorrow&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="supprimer-la-colonne-risk-mm-du-jeu-de-donnees">
+<h2>Supprimer la colonne ‘RISK_MM’ du jeu de données<a class="headerlink" href="#supprimer-la-colonne-risk-mm-du-jeu-de-donnees" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;RISK_MM&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="verifier-si-la-colonne-est-supprimee">
+<h2>Vérifier si la colonne est supprimée<a class="headerlink" href="#verifier-si-la-colonne-est-supprimee" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="c1"># df.shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date</th>
+      <th>Location</th>
+      <th>MinTemp</th>
+      <th>MaxTemp</th>
+      <th>Rainfall</th>
+      <th>Evaporation</th>
+      <th>Sunshine</th>
+      <th>WindGustDir</th>
+      <th>WindGustSpeed</th>
+      <th>WindDir9am</th>
+      <th>...</th>
+      <th>Humidity9am</th>
+      <th>Humidity3pm</th>
+      <th>Pressure9am</th>
+      <th>Pressure3pm</th>
+      <th>Cloud9am</th>
+      <th>Cloud3pm</th>
+      <th>Temp9am</th>
+      <th>Temp3pm</th>
+      <th>RainToday</th>
+      <th>RainTomorrow</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2008-12-01</td>
+      <td>Albury</td>
+      <td>13.4</td>
+      <td>22.9</td>
+      <td>0.6</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>W</td>
+      <td>44.0</td>
+      <td>W</td>
+      <td>...</td>
+      <td>71.0</td>
+      <td>22.0</td>
+      <td>1007.7</td>
+      <td>1007.1</td>
+      <td>8.0</td>
+      <td>NaN</td>
+      <td>16.9</td>
+      <td>21.8</td>
+      <td>No</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2008-12-02</td>
+      <td>Albury</td>
+      <td>7.4</td>
+      <td>25.1</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>WNW</td>
+      <td>44.0</td>
+      <td>NNW</td>
+      <td>...</td>
+      <td>44.0</td>
+      <td>25.0</td>
+      <td>1010.6</td>
+      <td>1007.8</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>17.2</td>
+      <td>24.3</td>
+      <td>No</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2008-12-03</td>
+      <td>Albury</td>
+      <td>12.9</td>
+      <td>25.7</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>WSW</td>
+      <td>46.0</td>
+      <td>W</td>
+      <td>...</td>
+      <td>38.0</td>
+      <td>30.0</td>
+      <td>1007.6</td>
+      <td>1008.7</td>
+      <td>NaN</td>
+      <td>2.0</td>
+      <td>21.0</td>
+      <td>23.2</td>
+      <td>No</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2008-12-04</td>
+      <td>Albury</td>
+      <td>9.2</td>
+      <td>28.0</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NE</td>
+      <td>24.0</td>
+      <td>SE</td>
+      <td>...</td>
+      <td>45.0</td>
+      <td>16.0</td>
+      <td>1017.6</td>
+      <td>1012.8</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>18.1</td>
+      <td>26.5</td>
+      <td>No</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2008-12-05</td>
+      <td>Albury</td>
+      <td>17.5</td>
+      <td>32.3</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>W</td>
+      <td>41.0</td>
+      <td>ENE</td>
+      <td>...</td>
+      <td>82.0</td>
+      <td>33.0</td>
+      <td>1010.8</td>
+      <td>1006.0</td>
+      <td>7.0</td>
+      <td>8.0</td>
+      <td>17.8</td>
+      <td>29.7</td>
+      <td>No</td>
+      <td>No</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 23 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="afficher-un-summary-du-jeu-de-donnees">
+<h2>Afficher un summary du jeu de données<a class="headerlink" href="#afficher-un-summary-du-jeu-de-donnees" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 142193 entries, 0 to 142192
+Data columns (total 23 columns):
+ #   Column         Non-Null Count   Dtype  
+---  ------         --------------   -----  
+ 0   Date           142193 non-null  object 
+ 1   Location       142193 non-null  object 
+ 2   MinTemp        141556 non-null  float64
+ 3   MaxTemp        141871 non-null  float64
+ 4   Rainfall       140787 non-null  float64
+ 5   Evaporation    81350 non-null   float64
+ 6   Sunshine       74377 non-null   float64
+ 7   WindGustDir    132863 non-null  object 
+ 8   WindGustSpeed  132923 non-null  float64
+ 9   WindDir9am     132180 non-null  object 
+ 10  WindDir3pm     138415 non-null  object 
+ 11  WindSpeed9am   140845 non-null  float64
+ 12  WindSpeed3pm   139563 non-null  float64
+ 13  Humidity9am    140419 non-null  float64
+ 14  Humidity3pm    138583 non-null  float64
+ 15  Pressure9am    128179 non-null  float64
+ 16  Pressure3pm    128212 non-null  float64
+ 17  Cloud9am       88536 non-null   float64
+ 18  Cloud3pm       85099 non-null   float64
+ 19  Temp9am        141289 non-null  float64
+ 20  Temp3pm        139467 non-null  float64
+ 21  RainToday      140787 non-null  object 
+ 22  RainTomorrow   142193 non-null  object 
+dtypes: float64(16), object(7)
+memory usage: 25.0+ MB
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="afficher-la-liste-des-noms-des-variables-qualitatives">
+<h2>Afficher la liste des noms des variables qualitatives<a class="headerlink" href="#afficher-la-liste-des-noms-des-variables-qualitatives" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">categorical</span> <span class="o">=</span> <span class="p">[</span><span class="n">var</span> <span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">df</span><span class="p">[</span><span class="n">var</span><span class="p">]</span><span class="o">.</span><span class="n">dtype</span><span class="o">==</span><span class="s1">&#39;O&#39;</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;There are </span><span class="si">{}</span><span class="s1"> categorical variables</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">categorical</span><span class="p">)))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The categorical variables are :&#39;</span><span class="p">,</span> <span class="n">categorical</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>There are 7 categorical variables
+
+The categorical variables are : [&#39;Date&#39;, &#39;Location&#39;, &#39;WindGustDir&#39;, &#39;WindDir9am&#39;, &#39;WindDir3pm&#39;, &#39;RainToday&#39;, &#39;RainTomorrow&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="afficher-le-contenu-de-ces-variables-qualitatives">
+<h2>Afficher le contenu de ces variables qualitatives<a class="headerlink" href="#afficher-le-contenu-de-ces-variables-qualitatives" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">categorical</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date</th>
+      <th>Location</th>
+      <th>WindGustDir</th>
+      <th>WindDir9am</th>
+      <th>WindDir3pm</th>
+      <th>RainToday</th>
+      <th>RainTomorrow</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2008-12-01</td>
+      <td>Albury</td>
+      <td>W</td>
+      <td>W</td>
+      <td>WNW</td>
+      <td>No</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2008-12-02</td>
+      <td>Albury</td>
+      <td>WNW</td>
+      <td>NNW</td>
+      <td>WSW</td>
+      <td>No</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2008-12-03</td>
+      <td>Albury</td>
+      <td>WSW</td>
+      <td>W</td>
+      <td>WSW</td>
+      <td>No</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2008-12-04</td>
+      <td>Albury</td>
+      <td>NE</td>
+      <td>SE</td>
+      <td>E</td>
+      <td>No</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2008-12-05</td>
+      <td>Albury</td>
+      <td>W</td>
+      <td>ENE</td>
+      <td>NW</td>
+      <td>No</td>
+      <td>No</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="checker-le-nombre-des-valeurs-manquantes-dans-chaque-variable-qualitative">
+<h2>Checker le nombre des valeurs manquantes dans chaque variable qualitative<a class="headerlink" href="#checker-le-nombre-des-valeurs-manquantes-dans-chaque-variable-qualitative" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">categorical</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Date                0
+Location            0
+WindGustDir      9330
+WindDir9am      10013
+WindDir3pm       3778
+RainToday        1406
+RainTomorrow        0
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="afficher-les-variables-qualitatives-qui-contiennent-des-valeurs-manquantes">
+<h2>Afficher les variables qualitatives qui contiennent des valeurs manquantes<a class="headerlink" href="#afficher-les-variables-qualitatives-qui-contiennent-des-valeurs-manquantes" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat1</span> <span class="o">=</span> <span class="p">[</span><span class="n">var</span> <span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">categorical</span> <span class="k">if</span> <span class="n">df</span><span class="p">[</span><span class="n">var</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">!=</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">cat1</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WindGustDir     9330
+WindDir9am     10013
+WindDir3pm      3778
+RainToday       1406
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="afficher-la-frequence-des-variables-qualitatives">
+<h2>Afficher la fréquence des variables qualitatives<a class="headerlink" href="#afficher-la-frequence-des-variables-qualitatives" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">categorical</span><span class="p">:</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=========&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">var</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;=========&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">var</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=========Date=========
+2016-08-03    49
+2013-07-22    49
+2016-07-12    49
+2016-06-21    49
+2016-08-28    49
+              ..
+2007-12-20     1
+2008-01-02     1
+2008-01-14     1
+2007-11-13     1
+2007-11-18     1
+Name: Date, Length: 3436, dtype: int64
+=========Location=========
+Canberra            3418
+Sydney              3337
+Perth               3193
+Darwin              3192
+Hobart              3188
+Brisbane            3161
+Adelaide            3090
+Bendigo             3034
+Townsville          3033
+AliceSprings        3031
+MountGambier        3030
+Ballarat            3028
+Launceston          3028
+Albany              3016
+Albury              3011
+MelbourneAirport    3009
+PerthAirport        3009
+Mildura             3007
+SydneyAirport       3005
+Nuriootpa           3002
+Sale                3000
+Watsonia            2999
+Tuggeranong         2998
+Portland            2996
+Woomera             2990
+Cobar               2988
+Cairns              2988
+Wollongong          2983
+GoldCoast           2980
+WaggaWagga          2976
+Penrith             2964
+NorfolkIsland       2964
+Newcastle           2955
+SalmonGums          2955
+CoffsHarbour        2953
+Witchcliffe         2952
+Richmond            2951
+Dartmoor            2943
+NorahHead           2929
+BadgerysCreek       2928
+MountGinini         2907
+Moree               2854
+Walpole             2819
+PearceRAAF          2762
+Williamtown         2553
+Melbourne           2435
+Nhil                1569
+Katherine           1559
+Uluru               1521
+Name: Location, dtype: int64
+=========WindGustDir=========
+W      9780
+SE     9309
+E      9071
+N      9033
+SSE    8993
+S      8949
+WSW    8901
+SW     8797
+SSW    8610
+WNW    8066
+NW     8003
+ENE    7992
+ESE    7305
+NE     7060
+NNW    6561
+NNE    6433
+Name: WindGustDir, dtype: int64
+=========WindDir9am=========
+N      11393
+SE      9162
+E       9024
+SSE     8966
+NW      8552
+S       8493
+W       8260
+SW      8237
+NNE     7948
+NNW     7840
+ENE     7735
+ESE     7558
+NE      7527
+SSW     7448
+WNW     7194
+WSW     6843
+Name: WindDir9am, dtype: int64
+=========WindDir3pm=========
+SE     10663
+W       9911
+S       9598
+WSW     9329
+SW      9182
+SSE     9142
+N       8667
+WNW     8656
+NW      8468
+ESE     8382
+E       8342
+NE      8164
+SSW     8010
+NNW     7733
+ENE     7724
+NNE     6444
+Name: WindDir3pm, dtype: int64
+=========RainToday=========
+No     109332
+Yes     31455
+Name: RainToday, dtype: int64
+=========RainTomorrow=========
+No     110316
+Yes     31877
+Name: RainTomorrow, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="nombre-de-labels-cardinalite">
+<h2>Nombre de labels: cardinalité<a class="headerlink" href="#nombre-de-labels-cardinalite" title="Permalink to this headline">¶</a></h2>
+<p>Le nombre de labels dans une variable qualitative est appelé la cardinalité. Un nombre élevé de labels dans une variable est appelé cardinalité élevée. Une cardinalité élevée peut poser de sérieux problèmes dans le modèle d’apprentissage automatique. Donc, Afficher la cardinalité de chaque variable qualitative.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">categorical</span><span class="p">:</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="n">var</span><span class="p">,</span> <span class="s1">&#39; contains &#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">var</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()),</span> <span class="s1">&#39; labels&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Date  contains  3436  labels
+Location  contains  49  labels
+WindGustDir  contains  17  labels
+WindDir9am  contains  17  labels
+WindDir3pm  contains  17  labels
+RainToday  contains  3  labels
+RainTomorrow  contains  2  labels
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="manipulation-d-une-variable-de-type-date">
+<h1>4. Manipulation d’une variable de type date<a class="headerlink" href="#manipulation-d-une-variable-de-type-date" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="transformer-la-variable-date-qui-est-code-comme-strings-a-une-variable-date-de-type-datetime-format">
+<h2>Transformer la variable ‘Date’, qui est codé  comme strings, à une variable ‘Date’ de type datetime format<a class="headerlink" href="#transformer-la-variable-date-qui-est-code-comme-strings-a-une-variable-date-de-type-datetime-format" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">])</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date</th>
+      <th>Location</th>
+      <th>MinTemp</th>
+      <th>MaxTemp</th>
+      <th>Rainfall</th>
+      <th>Evaporation</th>
+      <th>Sunshine</th>
+      <th>WindGustDir</th>
+      <th>WindGustSpeed</th>
+      <th>WindDir9am</th>
+      <th>...</th>
+      <th>Humidity9am</th>
+      <th>Humidity3pm</th>
+      <th>Pressure9am</th>
+      <th>Pressure3pm</th>
+      <th>Cloud9am</th>
+      <th>Cloud3pm</th>
+      <th>Temp9am</th>
+      <th>Temp3pm</th>
+      <th>RainToday</th>
+      <th>RainTomorrow</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2008-12-01</td>
+      <td>Albury</td>
+      <td>13.4</td>
+      <td>22.9</td>
+      <td>0.6</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>W</td>
+      <td>44.0</td>
+      <td>W</td>
+      <td>...</td>
+      <td>71.0</td>
+      <td>22.0</td>
+      <td>1007.7</td>
+      <td>1007.1</td>
+      <td>8.0</td>
+      <td>NaN</td>
+      <td>16.9</td>
+      <td>21.8</td>
+      <td>No</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2008-12-02</td>
+      <td>Albury</td>
+      <td>7.4</td>
+      <td>25.1</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>WNW</td>
+      <td>44.0</td>
+      <td>NNW</td>
+      <td>...</td>
+      <td>44.0</td>
+      <td>25.0</td>
+      <td>1010.6</td>
+      <td>1007.8</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>17.2</td>
+      <td>24.3</td>
+      <td>No</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2008-12-03</td>
+      <td>Albury</td>
+      <td>12.9</td>
+      <td>25.7</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>WSW</td>
+      <td>46.0</td>
+      <td>W</td>
+      <td>...</td>
+      <td>38.0</td>
+      <td>30.0</td>
+      <td>1007.6</td>
+      <td>1008.7</td>
+      <td>NaN</td>
+      <td>2.0</td>
+      <td>21.0</td>
+      <td>23.2</td>
+      <td>No</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2008-12-04</td>
+      <td>Albury</td>
+      <td>9.2</td>
+      <td>28.0</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NE</td>
+      <td>24.0</td>
+      <td>SE</td>
+      <td>...</td>
+      <td>45.0</td>
+      <td>16.0</td>
+      <td>1017.6</td>
+      <td>1012.8</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>18.1</td>
+      <td>26.5</td>
+      <td>No</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2008-12-05</td>
+      <td>Albury</td>
+      <td>17.5</td>
+      <td>32.3</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>W</td>
+      <td>41.0</td>
+      <td>ENE</td>
+      <td>...</td>
+      <td>82.0</td>
+      <td>33.0</td>
+      <td>1010.8</td>
+      <td>1006.0</td>
+      <td>7.0</td>
+      <td>8.0</td>
+      <td>17.8</td>
+      <td>29.7</td>
+      <td>No</td>
+      <td>No</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 23 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="extraire-l-annee-a-partir-de-la-variable-date-et-l-ajouter-dans-le-jeu-de-donnees-dans-une-colonne-separee-years">
+<h2>Extraire l’année à partir de la variable Date et l’ajouter dans le jeu de données dans une colonne separée ‘Years’<a class="headerlink" href="#extraire-l-annee-a-partir-de-la-variable-date-et-l-ajouter-dans-le-jeu-de-donnees-dans-une-colonne-separee-years" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date</th>
+      <th>Location</th>
+      <th>MinTemp</th>
+      <th>MaxTemp</th>
+      <th>Rainfall</th>
+      <th>Evaporation</th>
+      <th>Sunshine</th>
+      <th>WindGustDir</th>
+      <th>WindGustSpeed</th>
+      <th>WindDir9am</th>
+      <th>...</th>
+      <th>Humidity3pm</th>
+      <th>Pressure9am</th>
+      <th>Pressure3pm</th>
+      <th>Cloud9am</th>
+      <th>Cloud3pm</th>
+      <th>Temp9am</th>
+      <th>Temp3pm</th>
+      <th>RainToday</th>
+      <th>RainTomorrow</th>
+      <th>Year</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2008-12-01</td>
+      <td>Albury</td>
+      <td>13.4</td>
+      <td>22.9</td>
+      <td>0.6</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>W</td>
+      <td>44.0</td>
+      <td>W</td>
+      <td>...</td>
+      <td>22.0</td>
+      <td>1007.7</td>
+      <td>1007.1</td>
+      <td>8.0</td>
+      <td>NaN</td>
+      <td>16.9</td>
+      <td>21.8</td>
+      <td>No</td>
+      <td>No</td>
+      <td>2008</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2008-12-02</td>
+      <td>Albury</td>
+      <td>7.4</td>
+      <td>25.1</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>WNW</td>
+      <td>44.0</td>
+      <td>NNW</td>
+      <td>...</td>
+      <td>25.0</td>
+      <td>1010.6</td>
+      <td>1007.8</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>17.2</td>
+      <td>24.3</td>
+      <td>No</td>
+      <td>No</td>
+      <td>2008</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2008-12-03</td>
+      <td>Albury</td>
+      <td>12.9</td>
+      <td>25.7</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>WSW</td>
+      <td>46.0</td>
+      <td>W</td>
+      <td>...</td>
+      <td>30.0</td>
+      <td>1007.6</td>
+      <td>1008.7</td>
+      <td>NaN</td>
+      <td>2.0</td>
+      <td>21.0</td>
+      <td>23.2</td>
+      <td>No</td>
+      <td>No</td>
+      <td>2008</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2008-12-04</td>
+      <td>Albury</td>
+      <td>9.2</td>
+      <td>28.0</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NE</td>
+      <td>24.0</td>
+      <td>SE</td>
+      <td>...</td>
+      <td>16.0</td>
+      <td>1017.6</td>
+      <td>1012.8</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>18.1</td>
+      <td>26.5</td>
+      <td>No</td>
+      <td>No</td>
+      <td>2008</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2008-12-05</td>
+      <td>Albury</td>
+      <td>17.5</td>
+      <td>32.3</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>W</td>
+      <td>41.0</td>
+      <td>ENE</td>
+      <td>...</td>
+      <td>33.0</td>
+      <td>1010.8</td>
+      <td>1006.0</td>
+      <td>7.0</td>
+      <td>8.0</td>
+      <td>17.8</td>
+      <td>29.7</td>
+      <td>No</td>
+      <td>No</td>
+      <td>2008</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 24 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="extraire-le-mois-a-partir-de-la-variable-date-et-l-ajouter-dans-le-jeu-de-donnees-dans-une-colonne-separee-month">
+<h2>Extraire le mois à partir de la variable Date et l’ajouter dans le  jeu de données dans une colonne separée ‘Month’<a class="headerlink" href="#extraire-le-mois-a-partir-de-la-variable-date-et-l-ajouter-dans-le-jeu-de-donnees-dans-une-colonne-separee-month" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Month&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">month</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date</th>
+      <th>Location</th>
+      <th>MinTemp</th>
+      <th>MaxTemp</th>
+      <th>Rainfall</th>
+      <th>Evaporation</th>
+      <th>Sunshine</th>
+      <th>WindGustDir</th>
+      <th>WindGustSpeed</th>
+      <th>WindDir9am</th>
+      <th>...</th>
+      <th>Pressure9am</th>
+      <th>Pressure3pm</th>
+      <th>Cloud9am</th>
+      <th>Cloud3pm</th>
+      <th>Temp9am</th>
+      <th>Temp3pm</th>
+      <th>RainToday</th>
+      <th>RainTomorrow</th>
+      <th>Year</th>
+      <th>Month</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2008-12-01</td>
+      <td>Albury</td>
+      <td>13.4</td>
+      <td>22.9</td>
+      <td>0.6</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>W</td>
+      <td>44.0</td>
+      <td>W</td>
+      <td>...</td>
+      <td>1007.7</td>
+      <td>1007.1</td>
+      <td>8.0</td>
+      <td>NaN</td>
+      <td>16.9</td>
+      <td>21.8</td>
+      <td>No</td>
+      <td>No</td>
+      <td>2008</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2008-12-02</td>
+      <td>Albury</td>
+      <td>7.4</td>
+      <td>25.1</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>WNW</td>
+      <td>44.0</td>
+      <td>NNW</td>
+      <td>...</td>
+      <td>1010.6</td>
+      <td>1007.8</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>17.2</td>
+      <td>24.3</td>
+      <td>No</td>
+      <td>No</td>
+      <td>2008</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2008-12-03</td>
+      <td>Albury</td>
+      <td>12.9</td>
+      <td>25.7</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>WSW</td>
+      <td>46.0</td>
+      <td>W</td>
+      <td>...</td>
+      <td>1007.6</td>
+      <td>1008.7</td>
+      <td>NaN</td>
+      <td>2.0</td>
+      <td>21.0</td>
+      <td>23.2</td>
+      <td>No</td>
+      <td>No</td>
+      <td>2008</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2008-12-04</td>
+      <td>Albury</td>
+      <td>9.2</td>
+      <td>28.0</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NE</td>
+      <td>24.0</td>
+      <td>SE</td>
+      <td>...</td>
+      <td>1017.6</td>
+      <td>1012.8</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>18.1</td>
+      <td>26.5</td>
+      <td>No</td>
+      <td>No</td>
+      <td>2008</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2008-12-05</td>
+      <td>Albury</td>
+      <td>17.5</td>
+      <td>32.3</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>W</td>
+      <td>41.0</td>
+      <td>ENE</td>
+      <td>...</td>
+      <td>1010.8</td>
+      <td>1006.0</td>
+      <td>7.0</td>
+      <td>8.0</td>
+      <td>17.8</td>
+      <td>29.7</td>
+      <td>No</td>
+      <td>No</td>
+      <td>2008</td>
+      <td>12</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 25 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="extraire-le-jour-a-partir-de-la-variable-date-et-l-ajouter-dans-le-jeu-de-donnees-dans-une-colonne-separee-day">
+<h2>Extraire le jour à partir de la variable Date et l’ajouter dans le  jeu de données dans une colonne separée ‘Day’<a class="headerlink" href="#extraire-le-jour-a-partir-de-la-variable-date-et-l-ajouter-dans-le-jeu-de-donnees-dans-une-colonne-separee-day" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Day&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">day</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date</th>
+      <th>Location</th>
+      <th>MinTemp</th>
+      <th>MaxTemp</th>
+      <th>Rainfall</th>
+      <th>Evaporation</th>
+      <th>Sunshine</th>
+      <th>WindGustDir</th>
+      <th>WindGustSpeed</th>
+      <th>WindDir9am</th>
+      <th>...</th>
+      <th>Pressure3pm</th>
+      <th>Cloud9am</th>
+      <th>Cloud3pm</th>
+      <th>Temp9am</th>
+      <th>Temp3pm</th>
+      <th>RainToday</th>
+      <th>RainTomorrow</th>
+      <th>Year</th>
+      <th>Month</th>
+      <th>Day</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2008-12-01</td>
+      <td>Albury</td>
+      <td>13.4</td>
+      <td>22.9</td>
+      <td>0.6</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>W</td>
+      <td>44.0</td>
+      <td>W</td>
+      <td>...</td>
+      <td>1007.1</td>
+      <td>8.0</td>
+      <td>NaN</td>
+      <td>16.9</td>
+      <td>21.8</td>
+      <td>No</td>
+      <td>No</td>
+      <td>2008</td>
+      <td>12</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2008-12-02</td>
+      <td>Albury</td>
+      <td>7.4</td>
+      <td>25.1</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>WNW</td>
+      <td>44.0</td>
+      <td>NNW</td>
+      <td>...</td>
+      <td>1007.8</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>17.2</td>
+      <td>24.3</td>
+      <td>No</td>
+      <td>No</td>
+      <td>2008</td>
+      <td>12</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2008-12-03</td>
+      <td>Albury</td>
+      <td>12.9</td>
+      <td>25.7</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>WSW</td>
+      <td>46.0</td>
+      <td>W</td>
+      <td>...</td>
+      <td>1008.7</td>
+      <td>NaN</td>
+      <td>2.0</td>
+      <td>21.0</td>
+      <td>23.2</td>
+      <td>No</td>
+      <td>No</td>
+      <td>2008</td>
+      <td>12</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2008-12-04</td>
+      <td>Albury</td>
+      <td>9.2</td>
+      <td>28.0</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NE</td>
+      <td>24.0</td>
+      <td>SE</td>
+      <td>...</td>
+      <td>1012.8</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>18.1</td>
+      <td>26.5</td>
+      <td>No</td>
+      <td>No</td>
+      <td>2008</td>
+      <td>12</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2008-12-05</td>
+      <td>Albury</td>
+      <td>17.5</td>
+      <td>32.3</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>W</td>
+      <td>41.0</td>
+      <td>ENE</td>
+      <td>...</td>
+      <td>1006.0</td>
+      <td>7.0</td>
+      <td>8.0</td>
+      <td>17.8</td>
+      <td>29.7</td>
+      <td>No</td>
+      <td>No</td>
+      <td>2008</td>
+      <td>12</td>
+      <td>5</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 26 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="supprimer-la-variable-date-du-jeu-de-donnees">
+<h2>Supprimer la variable Date du  jeu de données<a class="headerlink" href="#supprimer-la-variable-date-du-jeu-de-donnees" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;Date&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Location</th>
+      <th>MinTemp</th>
+      <th>MaxTemp</th>
+      <th>Rainfall</th>
+      <th>Evaporation</th>
+      <th>Sunshine</th>
+      <th>WindGustDir</th>
+      <th>WindGustSpeed</th>
+      <th>WindDir9am</th>
+      <th>WindDir3pm</th>
+      <th>...</th>
+      <th>Pressure3pm</th>
+      <th>Cloud9am</th>
+      <th>Cloud3pm</th>
+      <th>Temp9am</th>
+      <th>Temp3pm</th>
+      <th>RainToday</th>
+      <th>RainTomorrow</th>
+      <th>Year</th>
+      <th>Month</th>
+      <th>Day</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Albury</td>
+      <td>13.4</td>
+      <td>22.9</td>
+      <td>0.6</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>W</td>
+      <td>44.0</td>
+      <td>W</td>
+      <td>WNW</td>
+      <td>...</td>
+      <td>1007.1</td>
+      <td>8.0</td>
+      <td>NaN</td>
+      <td>16.9</td>
+      <td>21.8</td>
+      <td>No</td>
+      <td>No</td>
+      <td>2008</td>
+      <td>12</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Albury</td>
+      <td>7.4</td>
+      <td>25.1</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>WNW</td>
+      <td>44.0</td>
+      <td>NNW</td>
+      <td>WSW</td>
+      <td>...</td>
+      <td>1007.8</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>17.2</td>
+      <td>24.3</td>
+      <td>No</td>
+      <td>No</td>
+      <td>2008</td>
+      <td>12</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Albury</td>
+      <td>12.9</td>
+      <td>25.7</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>WSW</td>
+      <td>46.0</td>
+      <td>W</td>
+      <td>WSW</td>
+      <td>...</td>
+      <td>1008.7</td>
+      <td>NaN</td>
+      <td>2.0</td>
+      <td>21.0</td>
+      <td>23.2</td>
+      <td>No</td>
+      <td>No</td>
+      <td>2008</td>
+      <td>12</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Albury</td>
+      <td>9.2</td>
+      <td>28.0</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NE</td>
+      <td>24.0</td>
+      <td>SE</td>
+      <td>E</td>
+      <td>...</td>
+      <td>1012.8</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>18.1</td>
+      <td>26.5</td>
+      <td>No</td>
+      <td>No</td>
+      <td>2008</td>
+      <td>12</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Albury</td>
+      <td>17.5</td>
+      <td>32.3</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>W</td>
+      <td>41.0</td>
+      <td>ENE</td>
+      <td>NW</td>
+      <td>...</td>
+      <td>1006.0</td>
+      <td>7.0</td>
+      <td>8.0</td>
+      <td>17.8</td>
+      <td>29.7</td>
+      <td>No</td>
+      <td>No</td>
+      <td>2008</td>
+      <td>12</td>
+      <td>5</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 25 columns</p>
+</div></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="exploration-des-variables-quantitatives">
+<h1>5. Exploration des variables quantitatives<a class="headerlink" href="#exploration-des-variables-quantitatives" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="afficher-la-liste-des-variables-quantitatives-dans-le-jeu-de-donnees">
+<h2>Afficher la liste des variables quantitatives dans le jeu de données<a class="headerlink" href="#afficher-la-liste-des-variables-quantitatives-dans-le-jeu-de-donnees" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numerical</span> <span class="o">=</span> <span class="p">[</span><span class="n">var</span> <span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">df</span><span class="p">[</span><span class="n">var</span><span class="p">]</span><span class="o">.</span><span class="n">dtype</span><span class="o">!=</span><span class="s1">&#39;O&#39;</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;There are </span><span class="si">{}</span><span class="s1"> numerical variables</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">numerical</span><span class="p">)))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The numerical variables are :&#39;</span><span class="p">,</span> <span class="n">numerical</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>There are 19 numerical variables
+
+The numerical variables are : [&#39;MinTemp&#39;, &#39;MaxTemp&#39;, &#39;Rainfall&#39;, &#39;Evaporation&#39;, &#39;Sunshine&#39;, &#39;WindGustSpeed&#39;, &#39;WindSpeed9am&#39;, &#39;WindSpeed3pm&#39;, &#39;Humidity9am&#39;, &#39;Humidity3pm&#39;, &#39;Pressure9am&#39;, &#39;Pressure3pm&#39;, &#39;Cloud9am&#39;, &#39;Cloud3pm&#39;, &#39;Temp9am&#39;, &#39;Temp3pm&#39;, &#39;Year&#39;, &#39;Month&#39;, &#39;Day&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="visualiser-le-contenu-des-variables-quantitatives-dans-le-jeu-de-donnees">
+<h2>Visualiser le contenu des variables quantitatives dans le jeu de données<a class="headerlink" href="#visualiser-le-contenu-des-variables-quantitatives-dans-le-jeu-de-donnees" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">numerical</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>MinTemp</th>
+      <th>MaxTemp</th>
+      <th>Rainfall</th>
+      <th>Evaporation</th>
+      <th>Sunshine</th>
+      <th>WindGustSpeed</th>
+      <th>WindSpeed9am</th>
+      <th>WindSpeed3pm</th>
+      <th>Humidity9am</th>
+      <th>Humidity3pm</th>
+      <th>Pressure9am</th>
+      <th>Pressure3pm</th>
+      <th>Cloud9am</th>
+      <th>Cloud3pm</th>
+      <th>Temp9am</th>
+      <th>Temp3pm</th>
+      <th>Year</th>
+      <th>Month</th>
+      <th>Day</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>13.4</td>
+      <td>22.9</td>
+      <td>0.6</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>44.0</td>
+      <td>20.0</td>
+      <td>24.0</td>
+      <td>71.0</td>
+      <td>22.0</td>
+      <td>1007.7</td>
+      <td>1007.1</td>
+      <td>8.0</td>
+      <td>NaN</td>
+      <td>16.9</td>
+      <td>21.8</td>
+      <td>2008</td>
+      <td>12</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>7.4</td>
+      <td>25.1</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>44.0</td>
+      <td>4.0</td>
+      <td>22.0</td>
+      <td>44.0</td>
+      <td>25.0</td>
+      <td>1010.6</td>
+      <td>1007.8</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>17.2</td>
+      <td>24.3</td>
+      <td>2008</td>
+      <td>12</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>12.9</td>
+      <td>25.7</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>46.0</td>
+      <td>19.0</td>
+      <td>26.0</td>
+      <td>38.0</td>
+      <td>30.0</td>
+      <td>1007.6</td>
+      <td>1008.7</td>
+      <td>NaN</td>
+      <td>2.0</td>
+      <td>21.0</td>
+      <td>23.2</td>
+      <td>2008</td>
+      <td>12</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>9.2</td>
+      <td>28.0</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>24.0</td>
+      <td>11.0</td>
+      <td>9.0</td>
+      <td>45.0</td>
+      <td>16.0</td>
+      <td>1017.6</td>
+      <td>1012.8</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>18.1</td>
+      <td>26.5</td>
+      <td>2008</td>
+      <td>12</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>17.5</td>
+      <td>32.3</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>41.0</td>
+      <td>7.0</td>
+      <td>20.0</td>
+      <td>82.0</td>
+      <td>33.0</td>
+      <td>1010.8</td>
+      <td>1006.0</td>
+      <td>7.0</td>
+      <td>8.0</td>
+      <td>17.8</td>
+      <td>29.7</td>
+      <td>2008</td>
+      <td>12</td>
+      <td>5</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="checker-les-valeurs-manquantes-dans-les-variables-quantitatives">
+<h2>Checker les valeurs manquantes dans les variables quantitatives<a class="headerlink" href="#checker-les-valeurs-manquantes-dans-les-variables-quantitatives" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">numerical</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MinTemp            637
+MaxTemp            322
+Rainfall          1406
+Evaporation      60843
+Sunshine         67816
+WindGustSpeed     9270
+WindSpeed9am      1348
+WindSpeed3pm      2630
+Humidity9am       1774
+Humidity3pm       3610
+Pressure9am      14014
+Pressure3pm      13981
+Cloud9am         53657
+Cloud3pm         57094
+Temp9am            904
+Temp3pm           2726
+Year                 0
+Month                0
+Day                  0
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="afficher-le-resume-statistique-des-variables-quantitatives-describe">
+<h2>Afficher le résumé statistique des variables quantitatives (describe())<a class="headerlink" href="#afficher-le-resume-statistique-des-variables-quantitatives-describe" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">numerical</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()),</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        MinTemp   MaxTemp  Rainfall  Evaporation  Sunshine  WindGustSpeed  \
+count  141556.0  141871.0  140787.0      81350.0   74377.0       132923.0   
+mean       12.0      23.0       2.0          5.0       8.0           40.0   
+std         6.0       7.0       8.0          4.0       4.0           14.0   
+min        -8.0      -5.0       0.0          0.0       0.0            6.0   
+25%         8.0      18.0       0.0          3.0       5.0           31.0   
+50%        12.0      23.0       0.0          5.0       8.0           39.0   
+75%        17.0      28.0       1.0          7.0      11.0           48.0   
+max        34.0      48.0     371.0        145.0      14.0          135.0   
+
+       WindSpeed9am  WindSpeed3pm  Humidity9am  Humidity3pm  Pressure9am  \
+count      140845.0      139563.0     140419.0     138583.0     128179.0   
+mean           14.0          19.0         69.0         51.0       1018.0   
+std             9.0           9.0         19.0         21.0          7.0   
+min             0.0           0.0          0.0          0.0        980.0   
+25%             7.0          13.0         57.0         37.0       1013.0   
+50%            13.0          19.0         70.0         52.0       1018.0   
+75%            19.0          24.0         83.0         66.0       1022.0   
+max           130.0          87.0        100.0        100.0       1041.0   
+
+       Pressure3pm  Cloud9am  Cloud3pm   Temp9am   Temp3pm      Year  \
+count     128212.0   88536.0   85099.0  141289.0  139467.0  142193.0   
+mean        1015.0       4.0       5.0      17.0      22.0    2013.0   
+std            7.0       3.0       3.0       6.0       7.0       3.0   
+min          977.0       0.0       0.0      -7.0      -5.0    2007.0   
+25%         1010.0       1.0       2.0      12.0      17.0    2011.0   
+50%         1015.0       5.0       5.0      17.0      21.0    2013.0   
+75%         1020.0       7.0       7.0      22.0      26.0    2015.0   
+max         1040.0       9.0       9.0      40.0      47.0    2017.0   
+
+          Month       Day  
+count  142193.0  142193.0  
+mean        6.0      16.0  
+std         3.0       9.0  
+min         1.0       1.0  
+25%         3.0       8.0  
+50%         6.0      16.0  
+75%         9.0      23.0  
+max        12.0      31.0   2
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="notre-variable-target-y-est-le-raintomorrow-recuprer-x-et-y-a-partir-du-jeu-de-donnees">
+<h1>6. Notre variable target (Y) est le RainTomorrow, Récuprer X et Y à partir du jeu de données<a class="headerlink" href="#notre-variable-target-y-est-le-raintomorrow-recuprer-x-et-y-a-partir-du-jeu-de-donnees" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;RainTomorrow&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;RainTomorrow&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="fractionnement-le-jeu-de-donnees-en-jeu-d-entrainement-et-jeu-de-test-20-pour-le-test">
+<h1>7. Fractionnement le jeu de données en jeu d’entraînement et jeu de test (20% pour le test)<a class="headerlink" href="#fractionnement-le-jeu-de-donnees-en-jeu-d-entrainement-et-jeu-de-test-20-pour-le-test" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">X_test</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">y_test</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>((113754, 24), (28439, 24), (28439,))
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="checker-les-valeurs-manquantes-des-variables-quantitatives-du-jeu-d-entrainement-et-de-test">
+<h1>8. Checker les valeurs manquantes des variables quantitatives du jeu d’entraînement et de test<a class="headerlink" href="#checker-les-valeurs-manquantes-des-variables-quantitatives-du-jeu-d-entrainement-et-de-test" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Récupérer tout d&#39;abord les variables quantitatives (numerical)</span>
+
+<span class="n">numerical</span> <span class="o">=</span> <span class="p">[</span><span class="n">col</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">X_train</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">X_train</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">dtypes</span> <span class="o">!=</span> <span class="s1">&#39;O&#39;</span><span class="p">]</span>
+
+<span class="n">numerical</span>
+
+
+<span class="c1"># check missing values in numerical variables in X_train</span>
+
+<span class="n">X_train</span><span class="p">[</span><span class="n">numerical</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="c1"># check missing values in numerical variables in X_test</span>
+
+<span class="n">X_test</span><span class="p">[</span><span class="n">numerical</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MinTemp            142
+MaxTemp             58
+Rainfall           267
+Evaporation      12125
+Sunshine         13502
+WindGustSpeed     1903
+WindSpeed9am       262
+WindSpeed3pm       536
+Humidity9am        325
+Humidity3pm        720
+Pressure9am       2802
+Pressure3pm       2795
+Cloud9am         10520
+Cloud3pm         11326
+Temp9am            164
+Temp3pm            555
+Year                 0
+Month                0
+Day                  0
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="en-utilisant-simpleimputer-de-scikit-learn-remplacer-les-valeurs-manquantes-dans-les-variables-numerique-entrainement-et-test-par-la-moyenne">
+<h1>9. En utilisant SimpleImputer de Scikit-Learn remplacer les valeurs manquantes dans les variables numérique (entraînement et test) par la moyenne<a class="headerlink" href="#en-utilisant-simpleimputer-de-scikit-learn-remplacer-les-valeurs-manquantes-dans-les-variables-numerique-entrainement-et-test-par-la-moyenne" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.impute</span> <span class="kn">import</span> <span class="n">SimpleImputer</span>
+
+<span class="n">imptr_train</span><span class="o">=</span><span class="n">SimpleImputer</span><span class="p">(</span><span class="n">missing_values</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">strategy</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">)</span>
+<span class="n">X_train</span><span class="p">[</span><span class="n">numerical</span><span class="p">]</span><span class="o">=</span><span class="n">imptr_train</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train</span><span class="p">[</span><span class="n">numerical</span><span class="p">])</span>
+
+<span class="n">imptr_test</span><span class="o">=</span><span class="n">SimpleImputer</span><span class="p">(</span><span class="n">missing_values</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">strategy</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">)</span>
+<span class="n">X_test</span><span class="p">[</span><span class="n">numerical</span><span class="p">]</span><span class="o">=</span><span class="n">imptr_test</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">[</span><span class="n">numerical</span><span class="p">])</span>
+
+<span class="n">X_train</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ISEN\anaconda3\envs\python37\lib\site-packages\ipykernel_launcher.py:4: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  after removing the cwd from sys.path.
+C:\Users\ISEN\anaconda3\envs\python37\lib\site-packages\pandas\core\indexing.py:966: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  self.obj[item] = s
+C:\Users\ISEN\anaconda3\envs\python37\lib\site-packages\ipykernel_launcher.py:7: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  import sys
+C:\Users\ISEN\anaconda3\envs\python37\lib\site-packages\pandas\core\indexing.py:966: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  self.obj[item] = s
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Location</th>
+      <th>MinTemp</th>
+      <th>MaxTemp</th>
+      <th>Rainfall</th>
+      <th>Evaporation</th>
+      <th>Sunshine</th>
+      <th>WindGustDir</th>
+      <th>WindGustSpeed</th>
+      <th>WindDir9am</th>
+      <th>WindDir3pm</th>
+      <th>...</th>
+      <th>Pressure9am</th>
+      <th>Pressure3pm</th>
+      <th>Cloud9am</th>
+      <th>Cloud3pm</th>
+      <th>Temp9am</th>
+      <th>Temp3pm</th>
+      <th>RainToday</th>
+      <th>Year</th>
+      <th>Month</th>
+      <th>Day</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>110803</th>
+      <td>Witchcliffe</td>
+      <td>13.9</td>
+      <td>22.6</td>
+      <td>0.2</td>
+      <td>5.478666</td>
+      <td>7.621878</td>
+      <td>S</td>
+      <td>41.000000</td>
+      <td>SSE</td>
+      <td>S</td>
+      <td>...</td>
+      <td>1013.900000</td>
+      <td>1013.400000</td>
+      <td>4.439101</td>
+      <td>4.504045</td>
+      <td>18.8</td>
+      <td>20.4</td>
+      <td>No</td>
+      <td>2014.0</td>
+      <td>4.0</td>
+      <td>25.0</td>
+    </tr>
+    <tr>
+      <th>87289</th>
+      <td>Cairns</td>
+      <td>22.4</td>
+      <td>29.4</td>
+      <td>2.0</td>
+      <td>6.000000</td>
+      <td>6.300000</td>
+      <td>ENE</td>
+      <td>33.000000</td>
+      <td>SSE</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>1016.900000</td>
+      <td>1013.100000</td>
+      <td>7.000000</td>
+      <td>5.000000</td>
+      <td>26.4</td>
+      <td>27.5</td>
+      <td>Yes</td>
+      <td>2015.0</td>
+      <td>11.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>134949</th>
+      <td>AliceSprings</td>
+      <td>9.7</td>
+      <td>36.2</td>
+      <td>0.0</td>
+      <td>11.400000</td>
+      <td>12.300000</td>
+      <td>E</td>
+      <td>31.000000</td>
+      <td>NE</td>
+      <td>N</td>
+      <td>...</td>
+      <td>1018.100000</td>
+      <td>1013.600000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>28.5</td>
+      <td>35.0</td>
+      <td>No</td>
+      <td>2014.0</td>
+      <td>10.0</td>
+      <td>19.0</td>
+    </tr>
+    <tr>
+      <th>85553</th>
+      <td>Cairns</td>
+      <td>20.5</td>
+      <td>30.1</td>
+      <td>0.0</td>
+      <td>8.800000</td>
+      <td>11.100000</td>
+      <td>ESE</td>
+      <td>37.000000</td>
+      <td>SSE</td>
+      <td>E</td>
+      <td>...</td>
+      <td>1014.100000</td>
+      <td>1010.800000</td>
+      <td>2.000000</td>
+      <td>3.000000</td>
+      <td>27.3</td>
+      <td>29.4</td>
+      <td>No</td>
+      <td>2010.0</td>
+      <td>10.0</td>
+      <td>30.0</td>
+    </tr>
+    <tr>
+      <th>16110</th>
+      <td>Newcastle</td>
+      <td>16.8</td>
+      <td>29.2</td>
+      <td>0.0</td>
+      <td>5.478666</td>
+      <td>7.621878</td>
+      <td>NaN</td>
+      <td>39.945294</td>
+      <td>NaN</td>
+      <td>SE</td>
+      <td>...</td>
+      <td>1017.645094</td>
+      <td>1015.245583</td>
+      <td>5.000000</td>
+      <td>8.000000</td>
+      <td>22.2</td>
+      <td>27.0</td>
+      <td>No</td>
+      <td>2012.0</td>
+      <td>11.0</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>41993</th>
+      <td>Wollongong</td>
+      <td>9.4</td>
+      <td>17.6</td>
+      <td>0.0</td>
+      <td>5.478666</td>
+      <td>7.621878</td>
+      <td>SSW</td>
+      <td>35.000000</td>
+      <td>ENE</td>
+      <td>E</td>
+      <td>...</td>
+      <td>1022.200000</td>
+      <td>1019.900000</td>
+      <td>6.000000</td>
+      <td>8.000000</td>
+      <td>16.3</td>
+      <td>16.2</td>
+      <td>No</td>
+      <td>2010.0</td>
+      <td>9.0</td>
+      <td>19.0</td>
+    </tr>
+    <tr>
+      <th>97639</th>
+      <td>MountGambier</td>
+      <td>1.2</td>
+      <td>20.2</td>
+      <td>0.0</td>
+      <td>2.000000</td>
+      <td>12.400000</td>
+      <td>N</td>
+      <td>33.000000</td>
+      <td>NE</td>
+      <td>NW</td>
+      <td>...</td>
+      <td>1022.000000</td>
+      <td>1017.900000</td>
+      <td>0.000000</td>
+      <td>1.000000</td>
+      <td>11.2</td>
+      <td>19.7</td>
+      <td>No</td>
+      <td>2010.0</td>
+      <td>10.0</td>
+      <td>25.0</td>
+    </tr>
+    <tr>
+      <th>95939</th>
+      <td>Adelaide</td>
+      <td>11.9</td>
+      <td>17.6</td>
+      <td>1.2</td>
+      <td>2.000000</td>
+      <td>7.621878</td>
+      <td>WSW</td>
+      <td>39.000000</td>
+      <td>SW</td>
+      <td>WSW</td>
+      <td>...</td>
+      <td>1022.200000</td>
+      <td>1022.800000</td>
+      <td>4.439101</td>
+      <td>4.504045</td>
+      <td>14.5</td>
+      <td>17.1</td>
+      <td>Yes</td>
+      <td>2014.0</td>
+      <td>9.0</td>
+      <td>11.0</td>
+    </tr>
+    <tr>
+      <th>117952</th>
+      <td>Perth</td>
+      <td>7.7</td>
+      <td>26.0</td>
+      <td>0.0</td>
+      <td>10.400000</td>
+      <td>11.200000</td>
+      <td>SSE</td>
+      <td>31.000000</td>
+      <td>SE</td>
+      <td>SE</td>
+      <td>...</td>
+      <td>1025.500000</td>
+      <td>1023.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>14.4</td>
+      <td>24.6</td>
+      <td>No</td>
+      <td>2009.0</td>
+      <td>3.0</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>43567</th>
+      <td>Wollongong</td>
+      <td>20.0</td>
+      <td>31.5</td>
+      <td>0.0</td>
+      <td>5.478666</td>
+      <td>7.621878</td>
+      <td>WNW</td>
+      <td>63.000000</td>
+      <td>WNW</td>
+      <td>SSW</td>
+      <td>...</td>
+      <td>1021.100000</td>
+      <td>1020.700000</td>
+      <td>4.439101</td>
+      <td>4.504045</td>
+      <td>26.1</td>
+      <td>22.8</td>
+      <td>No</td>
+      <td>2015.0</td>
+      <td>4.0</td>
+      <td>16.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>113754 rows × 24 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="verifier-que-les-valeurs-manquantes-n-existent-plus-dans-les-variables-quantitatives-entrainement-et-test">
+<h1>10. Vérifier que les valeurs manquantes n’existent plus dans les variables quantitatives (entraînement et test)<a class="headerlink" href="#verifier-que-les-valeurs-manquantes-n-existent-plus-dans-les-variables-quantitatives-entrainement-et-test" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">X_train</span><span class="p">[</span><span class="n">numerical</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;======================================&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">X_test</span><span class="p">[</span><span class="n">numerical</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MinTemp          0
+MaxTemp          0
+Rainfall         0
+Evaporation      0
+Sunshine         0
+WindGustSpeed    0
+WindSpeed9am     0
+WindSpeed3pm     0
+Humidity9am      0
+Humidity3pm      0
+Pressure9am      0
+Pressure3pm      0
+Cloud9am         0
+Cloud3pm         0
+Temp9am          0
+Temp3pm          0
+Year             0
+Month            0
+Day              0
+dtype: int64
+======================================
+MinTemp          0
+MaxTemp          0
+Rainfall         0
+Evaporation      0
+Sunshine         0
+WindGustSpeed    0
+WindSpeed9am     0
+WindSpeed3pm     0
+Humidity9am      0
+Humidity3pm      0
+Pressure9am      0
+Pressure3pm      0
+Cloud9am         0
+Cloud3pm         0
+Temp9am          0
+Temp3pm          0
+Year             0
+Month            0
+Day              0
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="en-utilisant-la-fonction-fillna-et-mode-remplacer-les-valeurs-manquantes-dans-les-variables-qualitatives-par-la-valeur-la-plus-frequante-pour-chaque-variable">
+<h1>11. En utilisant la fonction fillna() et mode() remplacer les valeurs manquantes dans les variables qualitatives par la valeur la plus fréquante pour chaque variable.<a class="headerlink" href="#en-utilisant-la-fonction-fillna-et-mode-remplacer-les-valeurs-manquantes-dans-les-variables-qualitatives-par-la-valeur-la-plus-frequante-pour-chaque-variable" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Récuperer tout d&#39;abord les variables qualitatives</span>
+
+<span class="n">categorical</span> <span class="o">=</span> <span class="p">[</span><span class="n">col</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">X_train</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">X_train</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">dtypes</span> <span class="o">==</span> <span class="s1">&#39;O&#39;</span><span class="p">]</span>
+
+<span class="n">categorical</span>
+
+
+
+
+<span class="k">for</span> <span class="n">df2</span> <span class="ow">in</span> <span class="p">[</span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">]:</span>
+    <span class="n">df2</span><span class="p">[</span><span class="s1">&#39;WindGustDir&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">X_train</span><span class="p">[</span><span class="s1">&#39;WindGustDir&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">df2</span><span class="p">[</span><span class="s1">&#39;WindDir9am&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">X_train</span><span class="p">[</span><span class="s1">&#39;WindDir9am&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">df2</span><span class="p">[</span><span class="s1">&#39;WindDir3pm&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">X_train</span><span class="p">[</span><span class="s1">&#39;WindDir3pm&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">df2</span><span class="p">[</span><span class="s1">&#39;RainToday&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">X_train</span><span class="p">[</span><span class="s1">&#39;RainToday&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ISEN\anaconda3\envs\python37\lib\site-packages\pandas\core\generic.py:6245: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  self._update_inplace(new_data)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="verifier-que-les-valeurs-manquantes-n-existent-plus-dans-les-variables-qualitative-entrainement-et-test">
+<h1>12. Vérifier que les valeurs manquantes n’existent plus dans les variables qualitative (entraînement et test)<a class="headerlink" href="#verifier-que-les-valeurs-manquantes-n-existent-plus-dans-les-variables-qualitative-entrainement-et-test" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span><span class="p">[</span><span class="n">categorical</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">X_test</span><span class="p">[</span><span class="n">categorical</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Location       0
+WindGustDir    0
+WindDir9am     0
+WindDir3pm     0
+RainToday      0
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="encoder-la-variable-qualitative-raintoday-en-utilisant-le-module-category-encoders-et-la-fonction-binaryencoder-cols-raintoday-pour-le-jeu-d-entrainement-et-de-test">
+<h1>13. Encoder la variable qualitative ‘RainToday’ en utilisant le module category_encoders et la fonction BinaryEncoder(cols=[‘RainToday’]) pour le jeu d’entraînement et de test.<a class="headerlink" href="#encoder-la-variable-qualitative-raintoday-en-utilisant-le-module-category-encoders-et-la-fonction-binaryencoder-cols-raintoday-pour-le-jeu-d-entrainement-et-de-test" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Installation: Dans Anaconda Prompt tapez la commande: pip install category_encoders</span>
+
+<span class="kn">import</span> <span class="nn">category_encoders</span> <span class="k">as</span> <span class="nn">ce</span>
+
+<span class="n">encoder</span> <span class="o">=</span> <span class="n">ce</span><span class="o">.</span><span class="n">BinaryEncoder</span><span class="p">(</span><span class="n">cols</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;RainToday&#39;</span><span class="p">])</span>
+
+<span class="n">X_train</span> <span class="o">=</span> <span class="n">encoder</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+
+<span class="n">X_test</span> <span class="o">=</span> <span class="n">encoder</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="n">X_train</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Location</th>
+      <th>MinTemp</th>
+      <th>MaxTemp</th>
+      <th>Rainfall</th>
+      <th>Evaporation</th>
+      <th>Sunshine</th>
+      <th>WindGustDir</th>
+      <th>WindGustSpeed</th>
+      <th>WindDir9am</th>
+      <th>WindDir3pm</th>
+      <th>...</th>
+      <th>Pressure3pm</th>
+      <th>Cloud9am</th>
+      <th>Cloud3pm</th>
+      <th>Temp9am</th>
+      <th>Temp3pm</th>
+      <th>RainToday_0</th>
+      <th>RainToday_1</th>
+      <th>Year</th>
+      <th>Month</th>
+      <th>Day</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>110803</th>
+      <td>Witchcliffe</td>
+      <td>13.9</td>
+      <td>22.6</td>
+      <td>0.2</td>
+      <td>5.478666</td>
+      <td>7.621878</td>
+      <td>S</td>
+      <td>41.000000</td>
+      <td>SSE</td>
+      <td>S</td>
+      <td>...</td>
+      <td>1013.400000</td>
+      <td>4.439101</td>
+      <td>4.504045</td>
+      <td>18.8</td>
+      <td>20.4</td>
+      <td>0</td>
+      <td>1</td>
+      <td>2014.0</td>
+      <td>4.0</td>
+      <td>25.0</td>
+    </tr>
+    <tr>
+      <th>87289</th>
+      <td>Cairns</td>
+      <td>22.4</td>
+      <td>29.4</td>
+      <td>2.0</td>
+      <td>6.000000</td>
+      <td>6.300000</td>
+      <td>ENE</td>
+      <td>33.000000</td>
+      <td>SSE</td>
+      <td>SE</td>
+      <td>...</td>
+      <td>1013.100000</td>
+      <td>7.000000</td>
+      <td>5.000000</td>
+      <td>26.4</td>
+      <td>27.5</td>
+      <td>1</td>
+      <td>0</td>
+      <td>2015.0</td>
+      <td>11.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>134949</th>
+      <td>AliceSprings</td>
+      <td>9.7</td>
+      <td>36.2</td>
+      <td>0.0</td>
+      <td>11.400000</td>
+      <td>12.300000</td>
+      <td>E</td>
+      <td>31.000000</td>
+      <td>NE</td>
+      <td>N</td>
+      <td>...</td>
+      <td>1013.600000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>28.5</td>
+      <td>35.0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>2014.0</td>
+      <td>10.0</td>
+      <td>19.0</td>
+    </tr>
+    <tr>
+      <th>85553</th>
+      <td>Cairns</td>
+      <td>20.5</td>
+      <td>30.1</td>
+      <td>0.0</td>
+      <td>8.800000</td>
+      <td>11.100000</td>
+      <td>ESE</td>
+      <td>37.000000</td>
+      <td>SSE</td>
+      <td>E</td>
+      <td>...</td>
+      <td>1010.800000</td>
+      <td>2.000000</td>
+      <td>3.000000</td>
+      <td>27.3</td>
+      <td>29.4</td>
+      <td>0</td>
+      <td>1</td>
+      <td>2010.0</td>
+      <td>10.0</td>
+      <td>30.0</td>
+    </tr>
+    <tr>
+      <th>16110</th>
+      <td>Newcastle</td>
+      <td>16.8</td>
+      <td>29.2</td>
+      <td>0.0</td>
+      <td>5.478666</td>
+      <td>7.621878</td>
+      <td>W</td>
+      <td>39.945294</td>
+      <td>N</td>
+      <td>SE</td>
+      <td>...</td>
+      <td>1015.245583</td>
+      <td>5.000000</td>
+      <td>8.000000</td>
+      <td>22.2</td>
+      <td>27.0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>2012.0</td>
+      <td>11.0</td>
+      <td>8.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 25 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="recreer-un-nouveau-jeu-d-entrainement-en-concatenant-les-variables-numeriques-du-jeu-d-entrainement-precedent-avec-les-deux-colonnes-raintoday-0-raintoday-1-qui-vont-se-creer-a-l-aide-de-l-etape-precedente-plus-les-variables-qualitatives-transformees-a-des-variables-muettes-avec-la-fonction-get-dummies-de-pandas">
+<h1>14. Recréer un nouveau jeu d’entrainement en concatenant les variables numériques du jeu d’entrainement précedent avec les deux colonnes RainToday_0’, ‘RainToday_1’qui vont se créer à l’aide de l’étape précedente, plus les variables qualitatives transformées à des variables muettes avec la fonction get_dummies() de pandas<a class="headerlink" href="#recreer-un-nouveau-jeu-d-entrainement-en-concatenant-les-variables-numeriques-du-jeu-d-entrainement-precedent-avec-les-deux-colonnes-raintoday-0-raintoday-1-qui-vont-se-creer-a-l-aide-de-l-etape-precedente-plus-les-variables-qualitatives-transformees-a-des-variables-muettes-avec-la-fonction-get-dummies-de-pandas" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">X_train</span><span class="p">[</span><span class="n">numerical</span><span class="p">],</span> <span class="n">X_train</span><span class="p">[[</span><span class="s1">&#39;RainToday_0&#39;</span><span class="p">,</span> <span class="s1">&#39;RainToday_1&#39;</span><span class="p">]],</span>
+                     <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">Location</span><span class="p">),</span> 
+                     <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">WindGustDir</span><span class="p">),</span>
+                     <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">WindDir9am</span><span class="p">),</span>
+                     <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">WindDir3pm</span><span class="p">)],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(113754, 118)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="refaire-l-etape-precedente-pour-le-jeu-de-test">
+<h1>15. Refaire l’étape précedente pour le jeu de test<a class="headerlink" href="#refaire-l-etape-precedente-pour-le-jeu-de-test" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_test</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">X_test</span><span class="p">[</span><span class="n">numerical</span><span class="p">],</span> <span class="n">X_test</span><span class="p">[[</span><span class="s1">&#39;RainToday_0&#39;</span><span class="p">,</span> <span class="s1">&#39;RainToday_1&#39;</span><span class="p">]],</span>
+                     <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">X_test</span><span class="o">.</span><span class="n">Location</span><span class="p">),</span> 
+                     <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">X_test</span><span class="o">.</span><span class="n">WindGustDir</span><span class="p">),</span>
+                     <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">X_test</span><span class="o">.</span><span class="n">WindDir9am</span><span class="p">),</span>
+                     <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">X_test</span><span class="o">.</span><span class="n">WindDir3pm</span><span class="p">)],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">X_test</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(28439, 118)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="standariser-votre-jeu-d-entrainement-et-de-test-a-l-aide-de-standardscaler">
+<h1>16. Standariser votre jeu d’entrainement et de test à l’aide de StandardScaler<a class="headerlink" href="#standariser-votre-jeu-d-entrainement-et-de-test-a-l-aide-de-standardscaler" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cols</span> <span class="o">=</span> <span class="n">X_train</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+
+<span class="n">X_train</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+
+<span class="n">X_test</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_test</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0.81488143,  0.81213139, -0.27705087, ..., -0.2729453 ,
+        -0.25442783, -0.26471109],
+       [-0.84441791, -1.24593108, -0.18249506, ..., -0.2729453 ,
+        -0.25442783, -0.26471109],
+       [-0.32784359, -1.1049679 ,  1.44859261, ..., -0.2729453 ,
+        -0.25442783, -0.26471109],
+       ...,
+       [-0.78180284,  0.0509302 , -0.27705087, ..., -0.2729453 ,
+        -0.25442783, -0.26471109],
+       [ 1.28449445,  0.60068661, -0.27705087, ..., -0.2729453 ,
+        -0.25442783, -0.26471109],
+       [-0.48438126, -1.30231636,  0.29028398, ..., -0.2729453 ,
+        -0.25442783,  3.77770342]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="n">cols</span><span class="p">])</span>
+
+<span class="n">X_test</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="n">cols</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th>MinTemp</th>
+      <th>MaxTemp</th>
+      <th>Rainfall</th>
+      <th>Evaporation</th>
+      <th>Sunshine</th>
+      <th>WindGustSpeed</th>
+      <th>WindSpeed9am</th>
+      <th>WindSpeed3pm</th>
+      <th>Humidity9am</th>
+      <th>Humidity3pm</th>
+      <th>...</th>
+      <th>NNW</th>
+      <th>NW</th>
+      <th>S</th>
+      <th>SE</th>
+      <th>SSE</th>
+      <th>SSW</th>
+      <th>SW</th>
+      <th>W</th>
+      <th>WNW</th>
+      <th>WSW</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.267000</td>
+      <td>-0.090033</td>
+      <td>-0.253412</td>
+      <td>2.817985e-16</td>
+      <td>-3.248030e-16</td>
+      <td>8.042081e-02</td>
+      <td>0.680277</td>
+      <td>1.078818</td>
+      <td>-0.203478</td>
+      <td>0.170636</td>
+      <td>...</td>
+      <td>-0.240156</td>
+      <td>-0.253290</td>
+      <td>3.723958</td>
+      <td>-0.336298</td>
+      <td>-0.261618</td>
+      <td>-0.244487</td>
+      <td>-0.262499</td>
+      <td>-0.272945</td>
+      <td>-0.254428</td>
+      <td>-0.264711</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.597570</td>
+      <td>0.868517</td>
+      <td>-0.040661</td>
+      <td>1.654073e-01</td>
+      <td>-4.834049e-01</td>
+      <td>-5.295753e-01</td>
+      <td>-0.791693</td>
+      <td>0.000000</td>
+      <td>0.113394</td>
+      <td>0.365468</td>
+      <td>...</td>
+      <td>-0.240156</td>
+      <td>-0.253290</td>
+      <td>-0.268532</td>
+      <td>2.973552</td>
+      <td>-0.261618</td>
+      <td>-0.244487</td>
+      <td>-0.262499</td>
+      <td>-0.272945</td>
+      <td>-0.254428</td>
+      <td>-0.264711</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-0.390459</td>
+      <td>1.827066</td>
+      <td>-0.277051</td>
+      <td>1.878702e+00</td>
+      <td>1.710769e+00</td>
+      <td>-6.820743e-01</td>
+      <td>0.114135</td>
+      <td>-0.874532</td>
+      <td>-3.319390</td>
+      <td>-2.410892</td>
+      <td>...</td>
+      <td>-0.240156</td>
+      <td>-0.253290</td>
+      <td>-0.268532</td>
+      <td>-0.336298</td>
+      <td>-0.261618</td>
+      <td>-0.244487</td>
+      <td>-0.262499</td>
+      <td>-0.272945</td>
+      <td>-0.254428</td>
+      <td>-0.264711</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.300148</td>
+      <td>0.967191</td>
+      <td>-0.277051</td>
+      <td>1.053783e+00</td>
+      <td>1.271934e+00</td>
+      <td>-2.245772e-01</td>
+      <td>0.906734</td>
+      <td>0.044691</td>
+      <td>-0.520351</td>
+      <td>0.073220</td>
+      <td>...</td>
+      <td>-0.240156</td>
+      <td>-0.253290</td>
+      <td>-0.268532</td>
+      <td>-0.336298</td>
+      <td>-0.261618</td>
+      <td>-0.244487</td>
+      <td>-0.262499</td>
+      <td>-0.272945</td>
+      <td>-0.254428</td>
+      <td>-0.264711</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.720959</td>
+      <td>0.840324</td>
+      <td>-0.277051</td>
+      <td>2.817985e-16</td>
+      <td>-3.248030e-16</td>
+      <td>-5.417854e-16</td>
+      <td>-1.584292</td>
+      <td>-1.334144</td>
+      <td>0.166206</td>
+      <td>0.073220</td>
+      <td>...</td>
+      <td>-0.240156</td>
+      <td>-0.253290</td>
+      <td>-0.268532</td>
+      <td>2.973552</td>
+      <td>-0.261618</td>
+      <td>-0.244487</td>
+      <td>-0.262499</td>
+      <td>-0.272945</td>
+      <td>-0.254428</td>
+      <td>-0.264711</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>113749</th>
+      <td>-0.437420</td>
+      <td>-0.794849</td>
+      <td>-0.277051</td>
+      <td>2.817985e-16</td>
+      <td>-3.248030e-16</td>
+      <td>-3.770763e-01</td>
+      <td>-0.791693</td>
+      <td>-0.185115</td>
+      <td>-0.361914</td>
+      <td>1.388338</td>
+      <td>...</td>
+      <td>-0.240156</td>
+      <td>-0.253290</td>
+      <td>-0.268532</td>
+      <td>-0.336298</td>
+      <td>-0.261618</td>
+      <td>-0.244487</td>
+      <td>-0.262499</td>
+      <td>-0.272945</td>
+      <td>-0.254428</td>
+      <td>-0.264711</td>
+    </tr>
+    <tr>
+      <th>113750</th>
+      <td>-1.721029</td>
+      <td>-0.428345</td>
+      <td>-0.277051</td>
+      <td>-1.103700e+00</td>
+      <td>1.747339e+00</td>
+      <td>-5.295753e-01</td>
+      <td>-0.112322</td>
+      <td>-0.644726</td>
+      <td>0.007770</td>
+      <td>-0.900942</td>
+      <td>...</td>
+      <td>-0.240156</td>
+      <td>3.948044</td>
+      <td>-0.268532</td>
+      <td>-0.336298</td>
+      <td>-0.261618</td>
+      <td>-0.244487</td>
+      <td>-0.262499</td>
+      <td>-0.272945</td>
+      <td>-0.254428</td>
+      <td>-0.264711</td>
+    </tr>
+    <tr>
+      <th>113751</th>
+      <td>-0.046076</td>
+      <td>-0.794849</td>
+      <td>-0.135217</td>
+      <td>-1.103700e+00</td>
+      <td>-3.248030e-16</td>
+      <td>-7.207821e-02</td>
+      <td>-0.112322</td>
+      <td>0.159594</td>
+      <td>-0.097854</td>
+      <td>-0.657401</td>
+      <td>...</td>
+      <td>-0.240156</td>
+      <td>-0.253290</td>
+      <td>-0.268532</td>
+      <td>-0.336298</td>
+      <td>-0.261618</td>
+      <td>-0.244487</td>
+      <td>-0.262499</td>
+      <td>-0.272945</td>
+      <td>-0.254428</td>
+      <td>3.777703</td>
+    </tr>
+    <tr>
+      <th>113752</th>
+      <td>-0.703534</td>
+      <td>0.389242</td>
+      <td>-0.277051</td>
+      <td>1.561425e+00</td>
+      <td>1.308504e+00</td>
+      <td>-6.820743e-01</td>
+      <td>-0.338779</td>
+      <td>-0.644726</td>
+      <td>-0.573163</td>
+      <td>-1.290606</td>
+      <td>...</td>
+      <td>-0.240156</td>
+      <td>-0.253290</td>
+      <td>-0.268532</td>
+      <td>2.973552</td>
+      <td>-0.261618</td>
+      <td>-0.244487</td>
+      <td>-0.262499</td>
+      <td>-0.272945</td>
+      <td>-0.254428</td>
+      <td>-0.264711</td>
+    </tr>
+    <tr>
+      <th>113753</th>
+      <td>1.221879</td>
+      <td>1.164539</td>
+      <td>-0.277051</td>
+      <td>2.817985e-16</td>
+      <td>-3.248030e-16</td>
+      <td>1.757910e+00</td>
+      <td>3.284533</td>
+      <td>0.159594</td>
+      <td>-1.206908</td>
+      <td>1.339630</td>
+      <td>...</td>
+      <td>-0.240156</td>
+      <td>-0.253290</td>
+      <td>-0.268532</td>
+      <td>-0.336298</td>
+      <td>-0.261618</td>
+      <td>4.090200</td>
+      <td>-0.262499</td>
+      <td>-0.272945</td>
+      <td>-0.254428</td>
+      <td>-0.264711</td>
+    </tr>
+  </tbody>
+</table>
+<p>113754 rows × 118 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="creer-votre-modele-de-regression-logistique-et-entrainez-le-sur-les-donnees-d-entrainement">
+<h1>17. Créer votre modèle de régression logistique et entraînez le sur les données d’entraînement<a class="headerlink" href="#creer-votre-modele-de-regression-logistique-et-entrainez-le-sur-les-donnees-d-entrainement" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># train a logistic regression model on the training set</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+
+<span class="c1"># instantiate the model</span>
+<span class="n">logreg</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">solver</span><span class="o">=</span><span class="s1">&#39;liblinear&#39;</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">y_train</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="c1"># fit the model</span>
+<span class="n">logreg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(113754,)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LogisticRegression(random_state=0, solver=&#39;liblinear&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="predire-les-resultats-du-modele-sur-l-ensemble-du-test">
+<h1>18. Predire les résultats du modèle sur l’ensemble du test<a class="headerlink" href="#predire-les-resultats-du-modele-sur-l-ensemble-du-test" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred_test</span> <span class="o">=</span> <span class="n">logreg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="n">y_pred_test</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;No&#39;, &#39;No&#39;, &#39;No&#39;, ..., &#39;No&#39;, &#39;No&#39;, &#39;Yes&#39;], dtype=object)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="calculer-la-probabilite-que-demain-va-pleuvoir-ou-pas-en-utilisant-la-fonction-predict-proba-sur-le-jeu-de-test">
+<h2>Calculer la probabilité que demain va pleuvoir ou pas en utilisant la fonction predict_proba sur le jeu de test<a class="headerlink" href="#calculer-la-probabilite-que-demain-va-pleuvoir-ou-pas-en-utilisant-la-fonction-predict-proba-sur-le-jeu-de-test" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># probability of getting output as 0 - no rain</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">logreg</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_test</span><span class="p">)[:,</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="c1"># probability of getting output as 1 - rain</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">logreg</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_test</span><span class="p">)[:,</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.91449092 0.86313906 0.84077677 ... 0.97862451 0.80424516 0.33412788]
+[0.08550908 0.13686094 0.15922323 ... 0.02137549 0.19575484 0.66587212]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="afficher-l-accuracy-score-en-utilisant-la-fonction-accuracy-score-sur-le-jeu-de-test">
+<h2>Afficher l’accuracy score en utilisant la fonction accuracy_score sur le jeu de test<a class="headerlink" href="#afficher-l-accuracy-score-en-utilisant-la-fonction-accuracy-score-sur-le-jeu-de-test" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Model accuracy score: </span><span class="si">{0:0.4f}</span><span class="s1">&#39;</span><span class="o">.</span> <span class="nb">format</span><span class="p">(</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_test</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model accuracy score: 0.8499
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="comparer-l-accuracy-du-modele-sur-l-ensemble-d-apprentissage-et-l-ensemble-de-test-qu-est-ce-que-vous-remarquez">
+<h2>Comparer l’accuracy du modèle sur l’ensemble d’apprentissage et l’ensemble de test, qu’est ce que vous remarquez ?<a class="headerlink" href="#comparer-l-accuracy-du-modele-sur-l-ensemble-d-apprentissage-et-l-ensemble-de-test-qu-est-ce-que-vous-remarquez" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># print the scores on training and test set</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Training set score: </span><span class="si">{:.4f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">logreg</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Test set score: </span><span class="si">{:.4f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">logreg</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Training set score: 0.8482
+Test set score: 0.8499
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="afficher-la-matrice-de-confusion-tp-tn-fp-fn-sur-le-jeu-du-test-en-utilisant-la-fonction-confusion-matrix">
+<h1>19. Afficher la matrice de confusion, TP, TN, FP, FN sur le jeu du test en utilisant la fonction confusion_matrix<a class="headerlink" href="#afficher-la-matrice-de-confusion-tp-tn-fp-fn-sur-le-jeu-du-test-en-utilisant-la-fonction-confusion-matrix" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print the Confusion Matrix and slice it into four pieces</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span>
+
+<span class="n">cm</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_test</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Confusion matrix</span><span class="se">\n\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">cm</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">True Positives(TP) = &#39;</span><span class="p">,</span> <span class="n">cm</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">True Negatives(TN) = &#39;</span><span class="p">,</span> <span class="n">cm</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">False Positives(FP) = &#39;</span><span class="p">,</span> <span class="n">cm</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">False Negatives(FN) = &#39;</span><span class="p">,</span> <span class="n">cm</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Confusion matrix
+
+ [[20888  1179]
+ [ 3091  3281]]
+
+True Positives(TP) =  20888
+
+True Negatives(TN) =  3281
+
+False Positives(FP) =  1179
+
+False Negatives(FN) =  3091
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="calculer-les-metriques-de-classification-accuracy-classification-error-precision-recall-specificity-en-utilisant-seulement-les-valeurs-de-tp-tn-fp-fn">
+<h1>20. Calculer les métriques de classification (accuracy, classification error, precision, recall, specificity) en utilisant seulement les valeurs de TP, TN, FP, FN.<a class="headerlink" href="#calculer-les-metriques-de-classification-accuracy-classification-error-precision-recall-specificity-en-utilisant-seulement-les-valeurs-de-tp-tn-fp-fn" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">TP</span> <span class="o">=</span> <span class="n">cm</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">TN</span> <span class="o">=</span> <span class="n">cm</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">FP</span> <span class="o">=</span> <span class="n">cm</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">FN</span> <span class="o">=</span> <span class="n">cm</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># print classification accuracy</span>
+
+<span class="n">classification_accuracy</span> <span class="o">=</span> <span class="p">(</span><span class="n">TP</span> <span class="o">+</span> <span class="n">TN</span><span class="p">)</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">TP</span> <span class="o">+</span> <span class="n">TN</span> <span class="o">+</span> <span class="n">FP</span> <span class="o">+</span> <span class="n">FN</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Classification accuracy : </span><span class="si">{0:0.4f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">classification_accuracy</span><span class="p">))</span>
+
+
+
+<span class="c1"># print classification error</span>
+
+<span class="n">classification_error</span> <span class="o">=</span> <span class="p">(</span><span class="n">FP</span> <span class="o">+</span> <span class="n">FN</span><span class="p">)</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">TP</span> <span class="o">+</span> <span class="n">TN</span> <span class="o">+</span> <span class="n">FP</span> <span class="o">+</span> <span class="n">FN</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Classification error : </span><span class="si">{0:0.4f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">classification_error</span><span class="p">))</span>
+
+
+
+<span class="c1"># print precision score</span>
+
+<span class="n">precision</span> <span class="o">=</span> <span class="n">TP</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">TP</span> <span class="o">+</span> <span class="n">FP</span><span class="p">)</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Precision : </span><span class="si">{0:0.4f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">precision</span><span class="p">))</span>
+
+<span class="c1"># print recall score</span>
+
+<span class="n">recall</span> <span class="o">=</span> <span class="n">TP</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">TP</span> <span class="o">+</span> <span class="n">FN</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Recall or Sensitivity : </span><span class="si">{0:0.4f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">recall</span><span class="p">))</span>
+
+<span class="c1"># print Specificity score</span>
+
+<span class="n">specificity</span> <span class="o">=</span> <span class="n">TN</span> <span class="o">/</span> <span class="p">(</span><span class="n">TN</span> <span class="o">+</span> <span class="n">FP</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Specificity : </span><span class="si">{0:0.4f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">specificity</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Classification accuracy : 0.8499
+Classification error : 0.1501
+Precision : 0.9466
+Recall or Sensitivity : 0.8711
+Specificity : 0.7357
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="open_cv.html" title="previous page">1. Installer la bibliothèque opencv</a>
+    <a class='right-next' id="next-link" href="brief3_Aude.html" title="next page">Brief 3 Decision tree, random Forest  –Aude</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book community<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

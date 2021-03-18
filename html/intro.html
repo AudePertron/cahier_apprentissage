@@ -1,0 +1,587 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cahier d’apprentissage &#8212; Cahier d&#39;apprentissage Aude</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Notes diverses code python" href="notes_python.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/pandas.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Cahier d'apprentissage Aude</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="#">
+   Cahier d’apprentissage
+  </a>
+ </li>
+</ul>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="notes_python.html">
+   Notes diverses code python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html">
+   1. Importez le package numpy sous le nom np
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#creer-un-vecteur-des-valeurs-0-de-taille-15">
+   2. Créer un vecteur des valeurs 0 de taille 15
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#creez-un-vecteur-nul-de-taille-10-mais-la-cinquieme-valeur-qui-est-1">
+   3. Créez un vecteur nul de taille 10 mais la cinquième valeur qui est 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#creez-un-vecteur-avec-des-valeurs-allant-de-10-a-49">
+   4. Créez un vecteur avec des valeurs allant de 10 à 49
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#inverser-un-vecteur">
+   5. Inverser un vecteur
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#creez-un-vecteur-aleatoire-de-taille-30-et-trouvez-la-valeur-moyenne">
+   6. Créez un vecteur aléatoire de taille 30 et trouvez la valeur moyenne
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#rechercher-des-indices-d-elements-non-nuls-a-partir-de-0-3-1-2-0-0-4-0">
+   7. Rechercher des indices d’éléments non nuls à partir de [0,3,1,2,0,0,4,0]
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#etant-donne-un-tableau-1d-negativez-tous-les-elements-qui-sont-entre-2-et-7">
+   8. Étant donné un tableau 1D, négativez tous les éléments qui sont entre 2 et 7.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#comment-extraire-tous-les-nombres-entre-un-intervalle-donne-d-un-tableau-numpy">
+   9. Comment extraire tous les nombres entre un intervalle donné d’un tableau numpy?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#comment-trouver-des-valeurs-communes-entre-deux-tableaux">
+   10. Comment trouver des valeurs communes entre deux tableaux?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#comment-concatener-deux-tableaux-verticalment-horizontalement">
+   11. Comment concaténer deux tableaux verticalment &amp; horizontalement
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#creer-une-matrice-aletoire-de-taille-6-4">
+   12. Créer une matrice alétoire de taille (6,4)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#faire-le-transpose-une-matrice">
+   13. Faire le transposé une matrice
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#creer-une-matrice-d-identite-de-taille-3x3">
+   14. Créer une matrice d’identité de taille 3x3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#creer-un-tableau-3x5x5-avec-des-valeurs-aleatoires">
+   15. Créer un tableau 3x5x5 avec des valeurs aléatoires
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#creez-un-tableau-10x10-avec-des-valeurs-aleatoires-et-trouvez-les-valeurs-minimum-et-maximum">
+   16. Créez un tableau 10x10 avec des valeurs aléatoires et trouvez les valeurs minimum et maximum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#creez-un-tableau-2d-avec-1-sur-les-extremites-et-0-a-l-interieur">
+   17. Créez un tableau 2D avec 1 sur les extrémités et 0 à l’intérieur
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#creer-une-matrice-5x5-avec-des-valeurs-1-2-3-4-juste-en-dessous-de-la-diagonale">
+   18. Créer une matrice 5x5 avec des valeurs 1,2,3,4 juste en dessous de la diagonale
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#normaliser-une-matrice-aleatoire-5x5">
+   19. Normaliser une matrice aléatoire 5x5
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#multiplier-une-matrice-5x3-par-une-matrice-3x2">
+   20. Multiplier une matrice 5x3 par une matrice 3x2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#comment-obtenir-les-positions-ou-on-a-les-meme-elements-dans-les-deux-tableaux">
+   21. Comment obtenir les positions où on a les même éléments dans les deux tableaux ?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#comment-trouver-l-index-de-la-n-ieme-repetition-d-un-element-dans-un-tableau-1d">
+   22. Comment trouver l’index de la n ième répétition d’un élément dans un tableau 1D
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#comment-soustraire-un-tableau-1d-d-un-tableau-2d-ou-chaque-element-du-tableau-1d-soustrait-de-la-ligne-respective">
+   23. Comment soustraire un tableau 1d d’un tableau 2d, où chaque élément du tableau 1d soustrait de la ligne respective?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_numpy.html#comment-supprimer-toutes-les-valeurs-manquantes-d-un-tableau-numpy-avec-for">
+   24. Comment supprimer toutes les valeurs manquantes d’un tableau numpy? (avec for)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_cv.html">
+   1. Installer la bibliothèque opencv
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_cv.html#importer-la-bibliotheque">
+   2. Importer la bibliothèque
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_cv.html#lire-une-image-et-afficher-son-type">
+   1. Lire une image et afficher son type
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_cv.html#afficher-cette-image-et-sa-taille">
+   2. Afficher cette image et sa taille
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_cv.html#rotation-de-l-image">
+   3. Rotation de l’image
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_cv.html#recadrer-une-image">
+   4. Recadrer une image
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_cv.html#redimensionner-une-image">
+   5. Redimensionner une image
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_cv.html#ajuster-le-contraste-de-l-image">
+   6. Ajuster le contraste de l’image
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_cv.html#rendre-une-image-floue">
+   7. Rendre une image floue
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_cv.html#detecter-les-contours">
+   8. Detecter les contours
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_cv.html#convertir-une-image-en-niveau-de-gris">
+   9. Convertir une image en niveau de gris
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_cv.html#les-canneaux-rouge-vert-bleu">
+   10. Les canneaux Rouge, Vert, Bleu
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_cv.html#detection-du-centre-de-gravite-de-l-image">
+   11. Détection du centre de gravité de l’image
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_cv.html#extraction-de-texte-a-partir-d-une-image-ocr">
+   12. Extraction de texte à partir d’une image (OCR)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_cv.html#reduire-le-bruit-pour-une-image-couleur-et-en-niveau-de-gris">
+   13. Réduire le bruit pour une image couleur et en niveau de gris
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_cv.html#detection-des-visages-avec-la-methode-de-viola-et-jones">
+   14. Detection des visages avec la méthode de Viola et Jones
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_logistic.html">
+   1. Importez les bibliothéques necessaires
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_logistic.html#importez-le-jeu-de-donnees-weatheraus-csv">
+   2. Importez le jeu de données ‘weatherAUS.csv’
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_logistic.html#exploration-des-donnees">
+   3. Exploration des données
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_logistic.html#manipulation-d-une-variable-de-type-date">
+   4. Manipulation d’une variable de type date
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_logistic.html#exploration-des-variables-quantitatives">
+   5. Exploration des variables quantitatives
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_logistic.html#notre-variable-target-y-est-le-raintomorrow-recuprer-x-et-y-a-partir-du-jeu-de-donnees">
+   6. Notre variable target (Y) est le RainTomorrow, Récuprer X et Y à partir du jeu de données
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_logistic.html#fractionnement-le-jeu-de-donnees-en-jeu-d-entrainement-et-jeu-de-test-20-pour-le-test">
+   7. Fractionnement le jeu de données en jeu d’entraînement et jeu de test (20% pour le test)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_logistic.html#checker-les-valeurs-manquantes-des-variables-quantitatives-du-jeu-d-entrainement-et-de-test">
+   8. Checker les valeurs manquantes des variables quantitatives du jeu d’entraînement et de test
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_logistic.html#en-utilisant-simpleimputer-de-scikit-learn-remplacer-les-valeurs-manquantes-dans-les-variables-numerique-entrainement-et-test-par-la-moyenne">
+   9. En utilisant SimpleImputer de Scikit-Learn remplacer les valeurs manquantes dans les variables numérique (entraînement et test) par la moyenne
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_logistic.html#verifier-que-les-valeurs-manquantes-n-existent-plus-dans-les-variables-quantitatives-entrainement-et-test">
+   10. Vérifier que les valeurs manquantes n’existent plus dans les variables quantitatives (entraînement et test)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_logistic.html#en-utilisant-la-fonction-fillna-et-mode-remplacer-les-valeurs-manquantes-dans-les-variables-qualitatives-par-la-valeur-la-plus-frequante-pour-chaque-variable">
+   11. En utilisant la fonction fillna() et mode() remplacer les valeurs manquantes dans les variables qualitatives par la valeur la plus fréquante pour chaque variable.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_logistic.html#verifier-que-les-valeurs-manquantes-n-existent-plus-dans-les-variables-qualitative-entrainement-et-test">
+   12. Vérifier que les valeurs manquantes n’existent plus dans les variables qualitative (entraînement et test)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_logistic.html#encoder-la-variable-qualitative-raintoday-en-utilisant-le-module-category-encoders-et-la-fonction-binaryencoder-cols-raintoday-pour-le-jeu-d-entrainement-et-de-test">
+   13. Encoder la variable qualitative ‘RainToday’ en utilisant le module category_encoders et la fonction BinaryEncoder(cols=[‘RainToday’]) pour le jeu d’entraînement et de test.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_logistic.html#recreer-un-nouveau-jeu-d-entrainement-en-concatenant-les-variables-numeriques-du-jeu-d-entrainement-precedent-avec-les-deux-colonnes-raintoday-0-raintoday-1-qui-vont-se-creer-a-l-aide-de-l-etape-precedente-plus-les-variables-qualitatives-transformees-a-des-variables-muettes-avec-la-fonction-get-dummies-de-pandas">
+   14. Recréer un nouveau jeu d’entrainement en concatenant les variables numériques du jeu d’entrainement précedent avec les deux colonnes RainToday_0’, ‘RainToday_1’qui vont se créer à l’aide de l’étape précedente, plus les variables qualitatives transformées à des variables muettes avec la fonction get_dummies() de pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_logistic.html#refaire-l-etape-precedente-pour-le-jeu-de-test">
+   15. Refaire l’étape précedente pour le jeu de test
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_logistic.html#standariser-votre-jeu-d-entrainement-et-de-test-a-l-aide-de-standardscaler">
+   16. Standariser votre jeu d’entrainement et de test à l’aide de StandardScaler
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_logistic.html#creer-votre-modele-de-regression-logistique-et-entrainez-le-sur-les-donnees-d-entrainement">
+   17. Créer votre modèle de régression logistique et entraînez le sur les données d’entraînement
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_logistic.html#predire-les-resultats-du-modele-sur-l-ensemble-du-test">
+   18. Predire les résultats du modèle sur l’ensemble du test
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_logistic.html#afficher-la-matrice-de-confusion-tp-tn-fp-fn-sur-le-jeu-du-test-en-utilisant-la-fonction-confusion-matrix">
+   19. Afficher la matrice de confusion, TP, TN, FP, FN sur le jeu du test en utilisant la fonction confusion_matrix
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_logistic.html#calculer-les-metriques-de-classification-accuracy-classification-error-precision-recall-specificity-en-utilisant-seulement-les-valeurs-de-tp-tn-fp-fn">
+   20. Calculer les métriques de classification (accuracy, classification error, precision, recall, specificity) en utilisant seulement les valeurs de TP, TN, FP, FN.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="brief3_Aude.html">
+   Brief 3 Decision tree, random Forest  –Aude
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/intro.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/intro.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#par-aude-pertron-de-la-promo-kusanagi">
+   Par Aude Pertron de la promo Kusanagi
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="cahier-d-apprentissage">
+<h1>Cahier d’apprentissage<a class="headerlink" href="#cahier-d-apprentissage" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="par-aude-pertron-de-la-promo-kusanagi">
+<h2>Par Aude Pertron de la promo Kusanagi<a class="headerlink" href="#par-aude-pertron-de-la-promo-kusanagi" title="Permalink to this headline">¶</a></h2>
+<img src="https://64.media.tumblr.com/75619a5247246975b51b9f6700615b72/tumblr_n7dceunFcu1teiu7jo1_1280.png" alt="Logo promo" style="width: 500px;"/></div>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>Mes objectifs d’apprenante avec ce cahier sont de retrouver facilement mes notes sur des sujets interessants, dont je pourrais avoir à nouveau besoin à l’avenir.</p>
+<img src="images/pandas.png"><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>from IPython.display import IFrame, display
+filepath = &quot;images/sql_katas.pdf&quot;
+IFrame(filepath, width=700, height=400)
+</pre></div>
+</div>
+<p style=color:orange>test</p><div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='right-next' id="next-link" href="notes_python.html" title="next page">Notes diverses code python</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book community<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
